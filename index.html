@@ -361,12 +361,39 @@ let b=bank();
 if(all){
 questions=b.slice();
 }else{
-let keys=activeLesson[3].map(x=>x.toLowerCase());
+let title=String(activeLesson[0]||"").trim();
+
+const mathTopicAliases={
+"संख्या और स्थानीय मान":["संख्या पद्धति","विभाज्यता","घातांक","संख्या श्रेणी"],
+"जोड़, घटाव, गुणा और भाग":["मूल संक्रियाएँ","सरलीकरण"],
+"भिन्न":["भिन्न"],
+"दशमलव":["दशमलव"],
+"HCF और LCM":["HCF और LCM"],
+"प्रतिशत":["प्रतिशत"],
+"अनुपात और समानुपात":["अनुपात","समानुपात","इकाई विधि"],
+"औसत":["औसत","आँकड़ों का प्रबंधन"],
+"लाभ और हानि":["लाभ और हानि"],
+"साधारण ब्याज":["साधारण ब्याज"],
+"समय और कार्य":["समय और कार्य"],
+"चाल, समय और दूरी":["चाल, समय और दूरी"],
+"आयु के प्रश्न":["आयु"],
+"बीजगणित":["बीजगणित"]
+};
+
+let keys=(activeLesson[3]||[])
+.map(x=>String(x).toLowerCase().trim());
+
+let aliases=(mathTopicAliases[title]||[])
+.map(x=>x.toLowerCase().trim());
 
 questions=b.filter(q=>{
-let t=String(q.topic||"").toLowerCase();
+let t=String(q.topic||"").toLowerCase().trim();
 let s=String(q.question||"").toLowerCase();
-return keys.some(k=>t.includes(k)||s.includes(k));
+
+let topicMatch=aliases.some(a=>t===a||t.includes(a));
+let keywordMatch=keys.some(k=>t.includes(k)||s.includes(k));
+
+return topicMatch||keywordMatch;
 });
 }
 
@@ -383,12 +410,12 @@ render();
 if(!questions.length){
 $("counter").textContent="इस अध्याय के MCQ अभी प्रश्न बैंक में नहीं जोड़े गए हैं।";
 $("question").textContent=
-"पाठ उपलब्ध है, लेकिन इस अध्याय के प्रश्न अभी तैयार होने बाकी हैं। चाहें तो 'इस विषय के सभी उपलब्ध MCQ देखें' बटन से उपलब्ध प्रश्न कर सकते हैं।";
+"इस अध्याय के प्रश्न अभी उपलब्ध नहीं हैं। 'इस विषय के सभी उपलब्ध MCQ देखें' विकल्प से प्रश्न हल करें।";
 $("options").innerHTML="";
 $("next").disabled=true;
 $("total").textContent="0";
 }
-}
+  }
 
 function render(){
 $("total").textContent=questions.length;
