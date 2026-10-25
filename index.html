@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14213d">
+
+<title>SuperSankalp | Super TET 2026</title>
+
+<style>
+:root {
+  --navy: #14213d;
+  --blue: #2457a7;
+  --gold: #fca311;
+  --paper: #f5f7fb;
+  --green: #16794b;
+  --red: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--paper);
+  color: #172033;
+}
+
+header {
+  background: linear-gradient(135deg, #14213d, #2457a7);
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.brand {
+  color: #ffd98a;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.container {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 0 14px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 20px #14213d10;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+select, button {
+  width: 100%;
+  padding: 13px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+select {
+  border: 1px solid #ccd4e0;
+  background: white;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: .7;
+}
+
+.option {
+  text-align: left;
+  background: white;
+  color: #172033;
+  border: 1px solid #d5dce8;
+  margin: 5px 0;
+}
+
+.option.correct {
+  background: #e8f8ef;
+  border: 2px solid var(--green);
+}
+
+.option.wrong {
+  background: #fff0ef;
+  border: 2px solid var(--red);
+}
+
+.question {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.feedback {
+  display: none;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.feedback.show {
+  display: block;
+}
+
+.feedback.good {
+  background: #e8f8ef;
+}
+
+.feedback.bad {
+  background: #fff0ef;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.stat {
+  padding: 12px;
+  background: #eef3fb;
+  border-radius: 10px;
+}
+
+.stat strong {
+  display: block;
+  color: var(--blue);
+  font-size: 23px;
+}
+
+.small {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+}
+
+@media(max-width:500px) {
+  h1 { font-size: 28px; }
+  .question { font-size: 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">UPESSC • SUPER TET 2026</div>
+  <h1>SuperSankalp</h1>
+  <div>Smart MCQ Practice • Learn • Practice • Improve</div>
+</header>
+
+<main class="container">
+
+  <section class="card">
+    <label for="subject">अपना विषय चुनें</label>
+
+    <select id="subject">
+      <option value="gk">सामान्य ज्ञान एवं समसामयिक घटनाएँ</option>
+      <option value="hindi">हिंदी</option>
+      <option value="sanskrit">संस्कृत</option>
+      <option value="english">अंग्रेजी</option>
+      <option value="math">गणित</option>
+      <option value="science">विज्ञान</option>
+      <option value="evs">पर्यावरण एवं सामाजिक अध्ययन</option>
+      <option value="teaching">शिक्षण कौशल</option>
+      <option value="child">बाल मनोविज्ञान</option>
+      <option value="life">जीवन कौशल, प्रबंधन एवं अभिवृत्ति</option>
+      <option value="reasoning">तार्किक क्षमता</option>
+      <option value="it">सूचना तकनीकी</option>
+    </select>
+  </section>
+
+  <section class="card">
+    <div class="stats">
+      <div class="stat">
+        <strong id="total">0</strong>
+        <span>कुल प्रश्न</span>
+      </div>
+
+      <div class="stat">
+        <strong id="attempted">0</strong>
+        <span>हल किए</span>
+      </div>
+
+      <div class="stat">
+        <strong id="correct">0</strong>
+        <span>सही उत्तर</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div id="counter" class="small"></div>
+
+    <p id="question" class="question"></p>
+
+    <div id="options"></div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <button id="next">अगला प्रश्न →</button>
+
+    <button id="restart" style="background:#64748b">
+      इस विषय का अभ्यास फिर शुरू करें
+    </button>
+  </section>
+
+  <section class="card">
+    <strong>प्रश्न बैंक की स्थिति</strong>
+    <p id="status" class="small"></p>
+
+    <p class="small">
+      यह स्वतंत्र अभ्यास ऐप है। प्रश्नों को आधिकारिक पाठ्यक्रम,
+      NCERT, CTET और संबंधित विश्वसनीय स्रोतों के आधार पर
+      सत्यापित करके जोड़ा जाएगा। वास्तविक परीक्षा में किसी
+      प्रश्न के आने की गारंटी नहीं है।
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  SuperSankalp • Super TET 2026 Practice
+</footer>
+
+<script src="questions.js"></script>
+
+<script>
+const subject = document.getElementById("subject");
+
+let questions = [];
+let position = 0;
+let answered = {};
+let score = 0;
+let attempted = 0;
+
+function loadProgress() {
+  try {
+    return JSON.parse(
+      localStorage.getItem("supersankalp-progress") || "{}"
+    );
+  } catch {
+    return {};
+  }
+}
+
+function saveProgress(data) {
+  localStorage.setItem(
+    "supersankalp-progress",
+    JSON.stringify(data)
+  );
+}
+
+function startSubject() {
+  const bank = window.QUESTION_BANK || {};
+
+  questions = bank[subject.value] || [];
+  position = 0;
+
+  const progress = loadProgress();
+  answered = progress[subject.value] || {};
+
+  score = 0;
+  attempted = Object.keys(answered).length;
+
+  Object.values(answered).forEach(item => {
+    if (item.correct) score++;
+  });
+
+  render();
+}
+
+function render() {
+  document.getElementById("total").textContent =
+    questions.length;
+
+  document.getElementById("attempted").textContent =
+    attempted;
+
+  document.getElementById("correct").textContent =
+    score;
+
+  document.getElementById("status").textContent =
+    "इस विषय में अभी " + questions.length +
+    " प्रश्न उपलब्ध हैं। निर्धारित पूर्ण प्रश्न बैंक तैयार होने पर " +
+    "यह संख्या बढ़ाई जाएगी।";
+
+  const q = questions[position];
+
+  const optionsBox = document.getElementById("options");
+  const feedback = document.getElementById("feedback");
+
+  optionsBox.innerHTML = "";
+  feedback.className = "feedback";
+  feedback.textContent = "";
+
+  if (!q) {
+    document.getElementById("counter").textContent =
+      "इस विषय में अभी प्रश्न उपलब्ध नहीं हैं।";
+
+    document.getElementById("question").textContent =
+      "प्रश्न बैंक अपडेट होने पर यहाँ प्रश्न दिखाई देंगे।";
+
+    document.getElementById("next").disabled = true;
+    return;
+  }
+
+  document.getElementById("next").disabled = false;
+
+  document.getElementById("counter").textContent =
+    "प्रश्न " + (position + 1) + " / " + questions.length;
+
+  document.getElementById("question").textContent =
+    q.question;
+
+  q.options.forEach((text, index) => {
+    const button = document.createElement("button");
+
+    button.className = "option";
+    button.textContent =
+      ["A. ", "B. ", "C. ", "D. "][index] + text;
+
+    button.onclick = () => selectAnswer(index);
+
+    optionsBox.appendChild(button);
+  });
+
+  if (answered[q.id]) {
+    showAnswer(answered[q.id].selected, false);
+  }
+}
+
+function selectAnswer(index) {
+  const q = questions[position];
+
+  if (!q || answered[q.id]) return;
+
+  const isCorrect = index === q.answer;
+
+  answered[q.id] = {
+    selected: index,
+    correct: isCorrect
+  };
+
+  attempted++;
+
+  if (isCorrect) score++;
+
+  const progress = loadProgress();
+  progress[subject.value] = answered;
+  saveProgress(progress);
+
+  showAnswer(index, true);
+}
+
+function showAnswer(selected, updateStats) {
+  const q = questions[position];
+
+  const buttons = document.querySelectorAll(".option");
+
+  buttons.forEach((button, index) => {
+    button.disabled = true;
+
+    if (index === q.answer) {
+      button.classList.add("correct");
+    }
+
+    if (index === selected && selected !== q.answer) {
+      button.classList.add("wrong");
+    }
+  });
+
+  const feedback = document.getElementById("feedback");
+
+  feedback.className =
+    "feedback show " +
+    (selected === q.answer ? "good" : "bad");
+
+  feedback.textContent =
+    (selected === q.answer
+      ? "✅ सही उत्तर! "
+      : "❌ सही उत्तर: " +
+        ["A", "B", "C", "D"][q.answer] + ". ") +
+    (q.explanation || "");
+
+  if (updateStats) {
+    document.getElementById("attempted").textContent =
+      attempted;
+
+    document.getElementById("correct").textContent =
+      score;
+  }
+}
+
+document.getElementById("next").onclick = () => {
+  if (position < questions.length - 1) {
+    position++;
+    render();
+  } else {
+    alert("इस विषय के उपलब्ध प्रश्न पूरे हुए!");
+  }
+};
+
+document.getElementById("restart").onclick = () => {
+  if (confirm("क्या इस विषय की प्रगति रीसेट करनी है?")) {
+    const progress = loadProgress();
+    delete progress[subject.value];
+    saveProgress(progress);
+    startSubject();
+  }
+};
+
+subject.onchange = startSubject;
+
+startSubject();
+</script>
+
+</body>
+  </html>
