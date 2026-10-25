@@ -34,12 +34,62 @@ button:disabled{opacity:.7;cursor:default}
 .lesson-content{line-height:1.9;white-space:pre-line;font-size:16px}
 .tip{background:#fff7e6;border-left:4px solid var(--gold);padding:12px;border-radius:8px;margin:12px 0;line-height:1.8}
 .hidden{display:none!important}
+   /* मोबाइल Home और Back बटन */
+.nav-buttons{
+  position:fixed;
+  bottom:12px;
+  left:12px;
+  right:12px;
+  z-index:9999;
+  display:flex;
+  gap:10px;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+
+.nav-buttons button{
+  flex:1;
+  width:auto;
+  margin:0;
+  padding:12px 10px;
+  border-radius:14px;
+  font-size:15px;
+  box-shadow:0 3px 12px #14213d30;
+}
+
+.nav-home{
+  background:#a51d24;
+  border:1px solid #fca311;
+}
+
+.nav-back{
+  background:#14213d;
+  border:1px solid #fca311;
+}
+
+body{
+  padding-bottom:75px;
+}
 footer{text-align:center;padding:20px;color:#64748b}
 @media(max-width:500px){h1{font-size:27px}.question{font-size:18px}.card{padding:15px}}
 </style>
 </head>
 
 <body>
+   <div class="nav-buttons">
+  <button
+    type="button"
+    class="nav-home"
+    id="homeButton">
+    🏠 होम
+  </button>
+
+  <button
+    type="button"
+    class="nav-back"
+    id="backButton">
+    ↩️ बैक
+  </button>
+   </div>
 <header>
 <div class="brand">UPESSC • SUPER TET 2026</div>
 <h1>SuperSankalp</h1>
@@ -539,7 +589,39 @@ $("allQuestions").onclick=()=>startLessonQuiz(true);
 $("backToLesson").onclick=lessonMode;
 lessonSelect.onchange=showLesson;
 subject.onchange=startSubject;
+/* Home और Back बटन */
 
+$("homeButton").onclick = () => {
+  window.location.href = "index.html";
+};
+
+$("backButton").onclick = () => {
+  const lessonCard = $("lessonCard");
+  const quizCard = $("quizCard");
+
+  // गणित/विज्ञान के MCQ से पाठ पर वापस जाएँ
+  if (
+    !quizCard.classList.contains("hidden") &&
+    !$("backToLesson").classList.contains("hidden")
+  ) {
+    lessonMode();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  // पाठ वाले पेज से पिछली स्क्रीन पर जाएँ
+  if (!lessonCard.classList.contains("hidden")) {
+    window.location.href = "index.html";
+    return;
+  }
+
+  // अन्य स्थिति में ब्राउज़र का Back
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = "index.html";
+  }
+};
 startSubject();
 </script>
 </body>
