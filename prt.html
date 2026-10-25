@@ -596,31 +596,27 @@ $("homeButton").onclick = () => {
 };
 
 $("backButton").onclick = () => {
-  const lessonCard = $("lessonCard");
-  const quizCard = $("quizCard");
+const lessonCard = $("lessonCard");
+const quizCard = $("quizCard");
 
-  // गणित/विज्ञान के MCQ से पाठ पर वापस जाएँ
-  if (
-    !quizCard.classList.contains("hidden") &&
-    !$("backToLesson").classList.contains("hidden")
-  ) {
-    lessonMode();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    return;
-  }
+// गणित/विज्ञान के पाठ वाले MCQ से पाठ पर लौटें
+if (
+!quizCard.classList.contains("hidden") &&
+!$("backToLesson").classList.contains("hidden")
+) {
+lessonMode();
+window.scrollTo({ top: 0, behavior: "smooth" });
+return;
+}
 
-  // पाठ वाले पेज से पिछली स्क्रीन पर जाएँ
-  if (!lessonCard.classList.contains("hidden")) {
-    window.location.href = "index.html";
-    return;
-  }
+// यदि इसी पेज पर पिछली स्क्रीन उपलब्ध है तो वहीं लौटें
+if (window.history.length > 1) {
+window.history.back();
+return;
+}
 
-  // अन्य स्थिति में ब्राउज़र का Back
-  if (window.history.length > 1) {
-    window.history.back();
-  } else {
-    window.location.href = "index.html";
-  }
+// इतिहास उपलब्ध न होने पर होम खोलें
+window.location.href = "index.html";
 };
 startSubject();
 </script>
