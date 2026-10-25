@@ -109,15 +109,847 @@ window.QUESTION_BANK = {
   ],
 
   english: [
-    {
-      id: "english001",
-      topic: "Grammar",
-      question: "Choose the correct plural form of 'child'.",
-      options: ["childs", "children", "childes", "childrens"],
-      answer: 1,
-      explanation: "'Children' is the irregular plural form of 'child'."
+{
+id:"eng001",topic:"Parts of Speech",
+question:"Which of the following is a noun?",
+options:["Beautiful","Beauty","Beautifully","Beautify"],
+answer:1,
+explanation:"Beauty is a noun because it names a quality. Beautiful is an adjective, and beautifully is an adverb."
+},
+{
+id:"eng002",topic:"Parts of Speech",
+question:"Identify the adjective in the sentence: 'She has a beautiful garden.'",
+options:["She","Has","Beautiful","Garden"],
+answer:2,
+explanation:"Beautiful describes the noun garden, so it is an adjective."
+},
+{
+id:"eng003",topic:"Parts of Speech",
+question:"Identify the adverb in the sentence: 'He runs quickly.'",
+options:["He","Runs","Quickly","None"],
+answer:2,
+explanation:"Quickly describes how he runs. Therefore, it is an adverb."
+},
+{
+id:"eng004",topic:"Parts of Speech",
+question:"Which word is a pronoun?",
+options:["Teacher","They","School","Honesty"],
+answer:1,
+explanation:"They is a pronoun used in place of the names of people or things."
+},
+{
+id:"eng005",topic:"Parts of Speech",
+question:"Identify the verb in the sentence: 'The children play in the park.'",
+options:["Children","Play","The","Park"],
+answer:1,
+explanation:"Play expresses the action performed by the children, so it is a verb."
+},
+{
+id:"eng006",topic:"Noun",
+question:"Which of the following is a proper noun?",
+options:["City","River","Delhi","Country"],
+answer:2,
+explanation:"Delhi is the specific name of a place, so it is a proper noun."
+},
+{
+id:"eng007",topic:"Noun",
+question:"What is the plural form of 'child'?",
+options:["Childs","Childes","Children","Childrens"],
+answer:2,
+explanation:"Children is the irregular plural form of child."
+},
+{
+id:"eng008",topic:"Noun",
+question:"Which of the following is an uncountable noun?",
+options:["Book","Chair","Water","Pen"],
+answer:2,
+explanation:"Water is generally treated as an uncountable noun in English."
+},
+{
+id:"eng009",topic:"Noun",
+question:"Choose the correct collective noun: A _____ of birds.",
+options:["Herd","Flock","Pack","Bunch"],
+answer:1,
+explanation:"A group of birds is commonly called a flock."
+},
+{
+id:"eng010",topic:"Pronoun",
+question:"Choose the correct pronoun: 'Rita and _____ went to school.'",
+options:["Me","I","My","Mine"],
+answer:1,
+explanation:"I is the subject pronoun used with Rita in the compound subject: Rita and I."
+},
+{
+id:"eng011",topic:"Pronoun",
+question:"Choose the correct reflexive pronoun: 'She completed the work by _____.'",
+options:["Herself","Her","She","Hers"],
+answer:0,
+explanation:"Herself is the reflexive pronoun referring back to the subject she."
+},
+{
+id:"eng012",topic:"Pronoun",
+question:"Choose the correct relative pronoun: 'The boy _____ won the race is my brother.'",
+options:["Which","Who","Whom","Whose"],
+answer:1,
+explanation:"Who is used for people when the relative pronoun is the subject of the clause."
+},
+{
+id:"eng013",topic:"Adjective",
+question:"Choose the comparative form of 'good'.",
+options:["Gooder","More good","Best","Better"],
+answer:3,
+explanation:"Good has an irregular comparative form: better. Its superlative form is best."
+},
+{
+id:"eng014",topic:"Adjective",
+question:"Choose the superlative form of 'tall'.",
+options:["Taller","Tallest","More tall","Most taller"],
+answer:1,
+explanation:"For a short adjective such as tall, the superlative is generally formed by adding -est: tallest."
+},
+{
+id:"eng015",topic:"Adjective",
+question:"Choose the correct word: 'There are _____ students in the classroom.'",
+options:["Much","Many","Any much","Little"],
+answer:1,
+explanation:"Many is used with countable plural nouns such as students."
+},
+{
+id:"eng016",topic:"Articles",
+question:"Choose the correct article: 'He is _____ honest man.'",
+options:["A","An","The","No article"],
+answer:1,
+explanation:"Honest begins with a vowel sound because the h is silent. Therefore, an is correct."
+},
+{
+id:"eng017",topic:"Articles",
+question:"Choose the correct article: 'She studies at _____ university.'",
+options:["A","An","The","No article"],
+answer:0,
+explanation:"University begins with the consonant sound /yoo/, so a university is correct."
+},
+{
+id:"eng018",topic:"Articles",
+question:"Choose the correct article: '_____ Sun rises in the east.'",
+options:["A","An","The","No article"],
+answer:2,
+explanation:"The is used with unique objects such as the Sun in this conventional expression."
+},
+{
+id:"eng019",topic:"Articles",
+question:"Choose the correct option: 'I ate _____ apple.'",
+options:["A","An","The only","No article"],
+answer:1,
+explanation:"Apple begins with a vowel sound, so an apple is correct when introduced generally."
+},
+{
+id:"eng020",topic:"Articles",
+question:"Which sentence is correct?",
+options:["He is an European.","He is a European.","He is the European man always.","He is a honest man."],
+answer:1,
+explanation:"European begins with the consonant sound /y/, so a European is correct."
+},
+{
+id:"eng021",topic:"Tenses",
+question:"Choose the correct option: 'She _____ to school every day.'",
+options:["Go","Goes","Going","Gone"],
+answer:1,
+explanation:"The simple present tense takes -s or -es with a third-person singular subject: she goes."
+},
+{
+id:"eng022",topic:"Tenses",
+question:"Choose the correct option: 'They _____ cricket now.'",
+options:["Play","Played","Are playing","Plays"],
+answer:2,
+explanation:"The present continuous tense describes an action happening now: are playing."
+},
+{
+id:"eng023",topic:"Tenses",
+question:"Choose the correct option: 'I _____ my homework yesterday.'",
+options:["Complete","Completed","Have completed","Completing"],
+answer:1,
+explanation:"Yesterday refers to a finished past time, so the simple past form completed is appropriate."
+},
+{
+id:"eng024",topic:"Tenses",
+question:"Choose the correct option: 'She _____ here since 2020.'",
+options:["Lives","Lived","Has lived","Is live"],
+answer:2,
+explanation:"Since 2020 indicates a situation continuing from the past to the present. The present perfect is appropriate."
+},
+{
+id:"eng025",topic:"Tenses",
+question:"Choose the correct option: 'By next year, he _____ the course.'",
+options:["Completes","Completed","Will have completed","Will completing"],
+answer:2,
+explanation:"The future perfect describes an action that will be completed before a specified future time."
+},
+{
+id:"eng026",topic:"Tenses",
+question:"Choose the correct option: 'When I reached the station, the train _____.'",
+options:["Leaves","Has left","Had left","Will leave"],
+answer:2,
+explanation:"The train left before another past event. The past perfect, had left, shows the earlier action."
+},
+{
+id:"eng027",topic:"Tenses",
+question:"Choose the correct option: 'Listen! Someone _____ at the door.'",
+options:["Knocks","Knocked","Is knocking","Has knock"],
+answer:2,
+explanation:"Listen! indicates an action happening at the moment, so the present continuous is suitable."
+},
+{
+id:"eng028",topic:"Subject-Verb Agreement",
+question:"Choose the correct verb: 'Each of the boys _____ a book.'",
+options:["Have","Has","Are having","Were"],
+answer:1,
+explanation:"Each is grammatically singular and takes a singular verb: has."
+},
+{
+id:"eng029",topic:"Subject-Verb Agreement",
+question:"Choose the correct verb: 'The news _____ true.'",
+options:["Are","Were","Is","Have"],
+answer:2,
+explanation:"News is a singular noun in English, so it takes the singular verb is."
+},
+{
+id:"eng030",topic:"Subject-Verb Agreement",
+question:"Choose the correct option: 'Neither Ram nor his friends _____ present.'",
+options:["Was","Is","Were","Has"],
+answer:2,
+explanation:"With neither...nor, the verb commonly agrees with the nearer subject. Friends is plural, so were is correct."
+},
+{
+id:"eng031",topic:"Subject-Verb Agreement",
+question:"Choose the correct option: 'Mathematics _____ my favourite subject.'",
+options:["Are","Is","Were","Have"],
+answer:1,
+explanation:"Mathematics is treated as a singular subject name, so is is correct."
+},
+{
+id:"eng032",topic:"Prepositions",
+question:"Choose the correct preposition: 'The book is _____ the table.'",
+options:["On","At","Into","Between"],
+answer:0,
+explanation:"On indicates that something is resting on a surface."
+},
+{
+id:"eng033",topic:"Prepositions",
+question:"Choose the correct preposition: 'He was born _____ 15 August.'",
+options:["At","In","On","By"],
+answer:2,
+explanation:"On is used with specific dates: on 15 August."
+},
+{
+id:"eng034",topic:"Prepositions",
+question:"Choose the correct preposition: 'She has lived here _____ 2018.'",
+options:["For","Since","From","By"],
+answer:1,
+explanation:"Since is used with the starting point of a period, such as 2018."
+},
+{
+id:"eng035",topic:"Prepositions",
+question:"Choose the correct preposition: 'The school is _____ the bank and the post office.'",
+options:["Among","Between","Across","Inside"],
+answer:1,
+explanation:"Between is used when locating something in relation to two distinct places or things."
+},
+{
+id:"eng036",topic:"Vocabulary",
+question:"Choose the synonym of 'Brave'.",
+options:["Cowardly","Courageous","Weak","Careless"],
+answer:1,
+explanation:"Courageous means brave or willing to face danger."
+},
+{
+id:"eng037",topic:"Vocabulary",
+question:"Choose the antonym of 'Ancient'.",
+options:["Old","Historic","Modern","Past"],
+answer:2,
+explanation:"Ancient means very old; modern is its opposite."
+},
+{
+id:"eng038",topic:"Vocabulary",
+question:"Choose the synonym of 'Rapid'.",
+options:["Slow","Swift","Weak","Quiet"],
+answer:1,
+explanation:"Rapid means fast or swift."
+},
+{
+id:"eng039",topic:"Vocabulary",
+question:"Choose the antonym of 'Expand'.",
+options:["Increase","Extend","Contract","Enlarge"],
+answer:2,
+explanation:"Expand means to become larger; contract means to become smaller."
+},
+{
+id:"eng040",topic:"Vocabulary",
+question:"What does the word 'Generous' mean?",
+options:["Willing to give and share","Unwilling to work","Easily frightened","Always angry"],
+answer:0,
+explanation:"Generous describes someone willing to give, share, or help others."
+},
+{
+id:"eng041",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'Ram writes a letter.'",
+options:["A letter is written by Ram.","A letter was written by Ram.","A letter has written by Ram.","A letter is writing by Ram."],
+answer:0,
+explanation:"Simple present tense का passive structure is/am/are + V3 होता है। इसलिए A letter is written by Ram सही है।"
+},
+{
+id:"eng042",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'She is cooking food.'",
+options:["Food cooked by her.","Food was cooked by her.","Food is being cooked by her.","Food has been cooking by her."],
+answer:2,
+explanation:"Present continuous का passive structure is/am/are + being + V3 होता है।"
+},
+{
+id:"eng043",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'They completed the work.'",
+options:["The work is completed by them.","The work was completed by them.","The work has completed by them.","The work had completing by them."],
+answer:1,
+explanation:"Simple past का passive structure was/were + V3 होता है।"
+},
+{
+id:"eng044",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'He will help me.'",
+options:["I am helped by him.","I was helped by him.","I will be helped by him.","I will helped by him."],
+answer:2,
+explanation:"Simple future का passive structure will be + V3 होता है।"
+},
+{
+id:"eng045",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'Open the door.'",
+options:["The door is opened.","Let the door be opened.","The door was open.","The door has opened."],
+answer:1,
+explanation:"आज्ञासूचक वाक्य का passive सामान्यतः Let + object + be + V3 से बनता है।"
+},
+{
+id:"eng046",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'People speak English all over the world.'",
+options:["English spoke all over the world.","English is spoken all over the world.","English was speaking all over the world.","English has spoken all over the world."],
+answer:1,
+explanation:"यह सामान्य तथ्य है, इसलिए simple present passive— is spoken—का प्रयोग होगा।"
+},
+{
+id:"eng047",topic:"Active and Passive Voice",
+question:"Choose the correct passive form: 'Someone has stolen my bag.'",
+options:["My bag has been stolen.","My bag was stealing.","My bag has stolen.","My bag is stolen yesterday."],
+answer:0,
+explanation:"Present perfect passive का structure has/have + been + V3 होता है।"
+},
+{
+id:"eng048",topic:"Active and Passive Voice",
+question:"Which sentence cannot normally be changed into passive voice?",
+options:["She wrote a letter.","He bought a book.","The baby sleeps.","They cleaned the room."],
+answer:2,
+explanation:"Sleep अकर्मक क्रिया है। इस वाक्य में कोई direct object नहीं है, इसलिए सामान्य passive नहीं बनाया जाता।"
+},
+{
+id:"eng049",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: He said, 'I am happy.'",
+options:["He said that I am happy.","He said that he was happy.","He says that he was happy.","He said that he is happy yesterday."],
+answer:1,
+explanation:"Reporting verb said भूतकाल में है। सामान्य backshift में am का रूप was और I का रूप he हो जाता है।"
+},
+{
+id:"eng050",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: She said to me, 'You are kind.'",
+options:["She told me that I was kind.","She told me that you are kind.","She said me that I am kind.","She told that I was kind."],
+answer:0,
+explanation:"Said to me को told me किया जा सकता है। यहाँ you का संदर्भ me है, इसलिए I और are का was होगा।"
+},
+{
+id:"eng051",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: Ram said, 'I have finished my work.'",
+options:["Ram said that he has finished his work.","Ram said that he had finished his work.","Ram said that I had finished my work.","Ram said that he finished my work."],
+answer:1,
+explanation:"Past reporting verb के बाद present perfect सामान्यतः past perfect में बदलता है: have finished → had finished."
+},
+{
+id:"eng052",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: He said to me, 'Do you know the answer?'",
+options:["He asked me if I knew the answer.","He told me if I know the answer.","He asked me that I knew the answer.","He said me do I know the answer."],
+answer:0,
+explanation:"Yes/no question को indirect speech में if या whether से जोड़ा जाता है और वाक्य का क्रम सामान्य कथन जैसा होता है।"
+},
+{
+id:"eng053",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: The teacher said to the boys, 'Work hard.'",
+options:["The teacher said the boys work hard.","The teacher advised the boys to work hard.","The teacher told that work hard.","The teacher asked the boys worked hard."],
+answer:1,
+explanation:"आदेश या सलाह के indirect रूप में advised/told + object + to + verb का प्रयोग किया जा सकता है।"
+},
+{
+id:"eng054",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: She said, 'What a beautiful flower!'",
+options:["She said that what a beautiful flower.","She exclaimed that it was a very beautiful flower.","She asked if the flower was beautiful.","She told what beautiful flower it is."],
+answer:1,
+explanation:"आश्चर्य व्यक्त करने वाले exclamatory sentence को exclaimed के साथ कथन के रूप में बदला जा सकता है।"
+},
+{
+id:"eng055",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: He said, 'I will come tomorrow.'",
+options:["He said that he would come the next day.","He said that I will come tomorrow.","He said he comes tomorrow.","He said that he will came the next day."],
+answer:0,
+explanation:"Past reporting verb के साथ will सामान्यतः would और tomorrow का next day हो जाता है।"
+},
+{
+id:"eng056",topic:"Direct and Indirect Speech",
+question:"Choose the correct indirect speech: Mohan said, 'The Earth moves around the Sun.'",
+options:["Mohan said that the Earth moved around the Sun.","Mohan said that the Earth moves around the Sun.","Mohan told the Earth had moved around the Sun.","Mohan said the Earth will move around the Sun."],
+answer:1,
+explanation:"सार्वभौमिक सत्य के लिए indirect speech में tense सामान्यतः नहीं बदला जाता।"
+},
+{
+id:"eng057",topic:"Modals",
+question:"Choose the correct modal: 'You _____ obey traffic rules.'",
+options:["May","Must","Might","Would"],
+answer:1,
+explanation:"Must का प्रयोग मजबूत आवश्यकता या अनिवार्यता व्यक्त करने के लिए होता है।"
+},
+{
+id:"eng058",topic:"Modals",
+question:"Choose the correct modal: '_____ I come in, sir?'",
+options:["May","Must","Should","Would"],
+answer:0,
+explanation:"May I...? अनुमति माँगने का विनम्र और प्रचलित तरीका है।"
+},
+{
+id:"eng059",topic:"Modals",
+question:"Choose the correct modal: 'When she was five, she _____ swim very well.'",
+options:["Can","Could","May","Must"],
+answer:1,
+explanation:"Could का प्रयोग can की past ability व्यक्त करने के लिए किया जाता है।"
+},
+{
+id:"eng060",topic:"Modals",
+question:"Choose the correct modal: 'You _____ consult a doctor if the fever continues.'",
+options:["Should","Would","Might have","Can to"],
+answer:0,
+explanation:"Should सलाह देने के लिए प्रयुक्त होता है।"
+},
+{
+id:"eng061",topic:"Modals",
+question:"Choose the correct modal: 'It _____ rain tonight; the sky is cloudy.'",
+options:["Mustn't","Might","Cannot to","Should have"],
+answer:1,
+explanation:"Might किसी संभावित घटना को व्यक्त करता है।"
+},
+{
+id:"eng062",topic:"Conjunctions",
+question:"Choose the correct conjunction: 'I was tired, _____ I continued working.'",
+options:["Because","But","Unless","Or"],
+answer:1,
+explanation:"But दो विपरीत विचारों को जोड़ता है: थकान के बावजूद काम जारी रखना।"
+},
+{
+id:"eng063",topic:"Conjunctions",
+question:"Choose the correct conjunction: 'Study hard _____ you will fail.'",
+options:["And","Because","Or","Although"],
+answer:2,
+explanation:"इस वाक्य में or का अर्थ है 'अन्यथा'। यह चेतावनी या परिणाम दर्शाता है।"
+},
+{
+id:"eng064",topic:"Conjunctions",
+question:"Choose the correct conjunction: '_____ he is poor, he is honest.'",
+options:["Because","Although","Unless","So"],
+answer:1,
+explanation:"Although का अर्थ 'यद्यपि' है। यह विपरीत परिस्थिति को दर्शाता है।"
+},
+{
+id:"eng065",topic:"Conjunctions",
+question:"Choose the correct conjunction: 'Neither Ram _____ Shyam was present.'",
+options:["Or","And","Nor","But"],
+answer:2,
+explanation:"Neither के साथ nor का प्रयोग होता है: neither...nor."
+},
+{
+id:"eng066",topic:"Conjunctions",
+question:"Choose the correct conjunction: 'Wait here _____ I return.'",
+options:["Until","Because","Although","So"],
+answer:0,
+explanation:"Until का अर्थ 'जब तक' है। यहाँ लौटने तक प्रतीक्षा करने का अर्थ है।"
+},
+{
+id:"eng067",topic:"Sentence Correction",
+question:"Choose the grammatically correct sentence.",
+options:["He do not like tea.","He does not likes tea.","He does not like tea.","He not like tea."],
+answer:2,
+explanation:"Does के बाद verb का base form आता है। इसलिए does not like सही है।"
+},
+{
+id:"eng068",topic:"Sentence Correction",
+question:"Choose the grammatically correct sentence.",
+options:["She is senior than me.","She is senior to me.","She is more senior than me always.","She senior to me."],
+answer:1,
+explanation:"Senior के बाद सामान्यतः to का प्रयोग होता है, than का नहीं।"
+},
+{
+id:"eng069",topic:"Sentence Correction",
+question:"Choose the grammatically correct sentence.",
+options:["One of my friend is a teacher.","One of my friends is a teacher.","One of my friends are a teacher.","One of my friend are teachers."],
+answer:1,
+explanation:"One of के बाद plural noun और मुख्य क्रिया singular होती है: one of my friends is."
+},
+{
+id:"eng070",topic:"Sentence Correction",
+question:"Choose the grammatically correct sentence.",
+options:["I prefer tea than coffee.","I prefer tea to coffee.","I prefer tea from coffee.","I prefer tea over than coffee."],
+answer:1,
+explanation:"पारंपरिक grammar pattern में prefer A to B प्रयोग होता है।"
+},
+{
+id:"eng071",topic:"Sentence Correction",
+question:"Choose the grammatically correct sentence.",
+options:["He has been working here for five years.","He is working here since five years.","He has working here for five years.","He had been work here for five years."],
+answer:0,
+explanation:"अतीत में शुरू होकर अब तक जारी काम के लिए has/have been + verb-ing और अवधि के साथ for का प्रयोग होता है।"
+},
+{
+id:"eng072",topic:"Sentence Correction",
+question:"Choose the correct question tag: 'You are a teacher, _____?'",
+options:["Are you","Do you","Aren't you","Isn't it"],
+answer:2,
+explanation:"Positive statement के साथ सामान्यतः negative tag आता है। You are के साथ aren't you सही है।"
+},
+{
+id:"eng073",topic:"Sentence Correction",
+question:"Choose the correct question tag: 'She doesn't sing, _____?'",
+options:["Does she","Doesn't she","Is she","Isn't she"],
+answer:0,
+explanation:"Negative statement के साथ positive question tag आता है। Doesn't sing के साथ does she सही है।"
+},
+{
+id:"eng074",topic:"Sentence Correction",
+question:"Choose the correct sentence.",
+options:["Despite of the rain, we played.","Despite the rain, we played.","In spite the rain, we played.","Although of the rain, we played."],
+answer:1,
+explanation:"Despite के बाद सीधे noun phrase आता है। 'Despite the rain' सही है।"
+},
+{
+id:"eng075",topic:"Punctuation",
+question:"Which sentence uses the apostrophe correctly?",
+options:["The boys bag is red.","The boy's bag is red.","The boys's bag is red.","The boy bag's is red."],
+answer:1,
+explanation:"एक लड़के के स्वामित्व को दिखाने के लिए boy's लिखा जाता है।"
+},
+{
+id:"eng076",topic:"Punctuation",
+question:"Which punctuation mark is normally used at the end of a direct question?",
+options:["Full stop (.)","Comma (,)","Question mark (?)","Colon (:)"],
+answer:2,
+explanation:"Direct question के अंत में question mark (?) लगाया जाता है।"
+},
+{
+id:"eng077",topic:"Idioms",
+question:"What does the idiom 'A piece of cake' mean?",
+options:["A difficult task","An easy task","An expensive item","A sweet dish only"],
+answer:1,
+explanation:"A piece of cake का अर्थ है बहुत आसान काम।"
+},
+{
+id:"eng078",topic:"Idioms",
+question:"What does the idiom 'Once in a blue moon' mean?",
+options:["Very frequently","Very rarely","Every evening","At the right time"],
+answer:1,
+explanation:"Once in a blue moon का अर्थ है बहुत कम या कभी-कभार।"
+},
+{
+id:"eng079",topic:"One-word Substitution",
+question:"A person who teaches students is called a _____.",
+options:["Doctor","Teacher","Farmer","Tailor"],
+answer:1,
+explanation:"Teacher वह व्यक्ति है जो विद्यार्थियों को पढ़ाता है।"
+},
+{
+id:"eng080",topic:"One-word Substitution",
+question:"A person who cannot read or write is called _____.",
+options:["Literate","Scholar","Illiterate","Author"],
+answer:2,
+explanation:"Illiterate का अर्थ है निरक्षर—जो पढ़ने और लिखने में सक्षम न हो।"
+  },
+{
+id:"eng081",topic:"Reading Comprehension",
+question:"Read the passage: 'Rita wakes up early every morning. She waters the plants and then goes to school. She loves nature.' What does Rita do before going to school?",
+options:["She watches television.","She waters the plants.","She reads a newspaper.","She plays cricket."],
+answer:1,
+explanation:"गद्यांश के अनुसार रीता विद्यालय जाने से पहले पौधों को पानी देती है।"
+},
+{
+id:"eng082",topic:"Reading Comprehension",
+question:"Read the passage: 'Trees give us oxygen, fruits and shade. They also provide shelter to birds. We should protect trees.' What is the main idea of the passage?",
+options:["Trees are harmful.","Trees are useful and should be protected.","Birds do not need trees.","Trees grow only in forests."],
+answer:1,
+explanation:"गद्यांश में पेड़ों के लाभ बताए गए हैं और उनकी रक्षा करने का संदेश दिया गया है।"
+},
+{
+id:"eng083",topic:"Reading Comprehension",
+question:"Read the passage: 'Aman missed the bus because he got up late. He decided to set an alarm for the next day.' Why did Aman miss the bus?",
+options:["The bus was broken.","He got up late.","He forgot his bag.","It was raining."],
+answer:1,
+explanation:"गद्यांश के अनुसार अमन देर से उठा, इसलिए उसकी बस छूट गई।"
+},
+{
+id:"eng084",topic:"Reading Comprehension",
+question:"Read the passage: 'Meena saves a little money every week. At the end of the year, she buys books with her savings.' What lesson can we learn from Meena?",
+options:["Money should always be spent immediately.","Saving money can help us achieve goals.","Books are not useful.","We should never buy books."],
+answer:1,
+explanation:"मीना नियमित बचत करके अपनी आवश्यकता पूरी करती है। इससे बचत और लक्ष्य-निर्धारण का महत्त्व समझ आता है।"
+},
+{
+id:"eng085",topic:"Reading Comprehension",
+question:"Read the passage: 'The classroom was dirty. The teacher asked the students to work together to clean it. Soon the room looked neat.' What helped the students finish the task?",
+options:["Competition","Teamwork","Punishment","Silence"],
+answer:1,
+explanation:"विद्यार्थियों ने मिलकर काम किया। Teamwork का अर्थ है मिल-जुलकर कार्य करना।"
+},
+{
+id:"eng086",topic:"Reading Comprehension",
+question:"Read the passage: 'Water is essential for all living beings. We should close taps when they are not in use and repair leaking pipes.' Which action helps conserve water?",
+options:["Leaving taps open","Washing roads daily","Repairing leaking pipes","Throwing water away"],
+answer:2,
+explanation:"रिसते पाइप ठीक करने से पानी की बर्बादी रुकती है और जल संरक्षण होता है।"
+},
+{
+id:"eng087",topic:"Reading Comprehension",
+question:"Read the passage: 'The farmer sowed seeds before the rainy season. He removed weeds and cared for his crops. After a few months, he harvested a good crop.' What helped the farmer get a good crop?",
+options:["Neglecting the field","Caring for the crops","Avoiding the field","Removing all the seeds"],
+answer:1,
+explanation:"समय पर बुवाई और फसल की उचित देखभाल से किसान को अच्छी फसल मिली।"
+},
+{
+id:"eng088",topic:"Reading Comprehension",
+question:"Read the passage: 'Although Neha found mathematics difficult, she practised every day and asked her teacher for help. Gradually, she improved.' What is the best message of the passage?",
+options:["Difficult subjects should be avoided.","Practice and guidance can improve learning.","Teachers cannot help students.","Only talented students can learn mathematics."],
+answer:1,
+explanation:"नियमित अभ्यास और शिक्षक की सहायता से नेहा ने सुधार किया। यह निरंतर प्रयास के महत्त्व को दर्शाता है।"
+},
+{
+id:"eng089",topic:"Synonyms",
+question:"Choose the synonym of 'Abundant'.",
+options:["Scarce","Plentiful","Empty","Limited"],
+answer:1,
+explanation:"Abundant का अर्थ प्रचुर मात्रा में होता है। Plentiful इसका समानार्थी है।"
+},
+{
+id:"eng090",topic:"Synonyms",
+question:"Choose the synonym of 'Assist'.",
+options:["Hinder","Help","Prevent","Refuse"],
+answer:1,
+explanation:"Assist का अर्थ सहायता करना है। Help इसका समानार्थी है।"
+},
+{
+id:"eng091",topic:"Synonyms",
+question:"Choose the synonym of 'Fragile'.",
+options:["Strong","Delicate","Heavy","Rough"],
+answer:1,
+explanation:"Fragile का अर्थ आसानी से टूटने वाला या नाजुक होता है। Delicate इसका समानार्थी है।"
+},
+{
+id:"eng092",topic:"Synonyms",
+question:"Choose the synonym of 'Begin'.",
+options:["Finish","Start","Close","Stop"],
+answer:1,
+explanation:"Begin और start दोनों का अर्थ शुरू करना है।"
+},
+{
+id:"eng093",topic:"Antonyms",
+question:"Choose the antonym of 'Victory'.",
+options:["Success","Triumph","Defeat","Achievement"],
+answer:2,
+explanation:"Victory का अर्थ विजय और defeat का अर्थ हार होता है।"
+},
+{
+id:"eng094",topic:"Antonyms",
+question:"Choose the antonym of 'Generous'.",
+options:["Kind","Helpful","Selfish","Caring"],
+answer:2,
+explanation:"Generous का अर्थ उदार और selfish का अर्थ स्वार्थी होता है।"
+},
+{
+id:"eng095",topic:"Antonyms",
+question:"Choose the antonym of 'Permanent'.",
+options:["Lasting","Temporary","Stable","Fixed"],
+answer:1,
+explanation:"Permanent का अर्थ स्थायी और temporary का अर्थ अस्थायी होता है।"
+},
+{
+id:"eng096",topic:"Antonyms",
+question:"Choose the antonym of 'Accept'.",
+options:["Receive","Admit","Reject","Approve"],
+answer:2,
+explanation:"Accept का अर्थ स्वीकार करना और reject का अर्थ अस्वीकार करना है।"
+},
+{
+id:"eng097",topic:"One-word Substitution",
+question:"A person who writes poems is called a _____.",
+options:["Novelist","Poet","Editor","Painter"],
+answer:1,
+explanation:"Poet का अर्थ कवि होता है—वह व्यक्ति जो कविताएँ लिखता है।"
+},
+{
+id:"eng098",topic:"One-word Substitution",
+question:"A place where books are kept for reading or borrowing is called a _____.",
+options:["Laboratory","Library","Museum","Stadium"],
+answer:1,
+explanation:"Library का अर्थ पुस्तकालय है, जहाँ पुस्तकें पढ़ने या उधार लेने के लिए उपलब्ध होती हैं।"
+},
+{
+id:"eng099",topic:"One-word Substitution",
+question:"A person who looks at the bright side of things is an _____.",
+options:["Optimist","Pessimist","Artist","Opponent"],
+answer:0,
+explanation:"Optimist वह व्यक्ति है जो परिस्थितियों के सकारात्मक पक्ष को देखता है।"
+},
+{
+id:"eng100",topic:"One-word Substitution",
+question:"A person who cannot hear is described as _____.",
+options:["Blind","Deaf","Mute","Lame"],
+answer:1,
+explanation:"Deaf का अर्थ बधिर या सुनने में असमर्थ व्यक्ति होता है। सम्मानजनक भाषा में संदर्भ के अनुसार 'a person who is deaf' भी कहा जा सकता है।"
+},
+{
+id:"eng101",topic:"Sentence Rearrangement",
+question:"Arrange the words to make a meaningful sentence: 'daily / exercise / health / improves / your'.",
+options:["Daily your improves exercise health.","Exercise improves your health daily.","Health daily exercise improves your.","Your daily health improves exercise."],
+answer:1,
+explanation:"सही वाक्य है: Exercise improves your health daily. अर्थात व्यायाम प्रतिदिन आपके स्वास्थ्य में सुधार करता है।"
+},
+{
+id:"eng102",topic:"Sentence Rearrangement",
+question:"Arrange the words to make a meaningful sentence: 'honesty / the / policy / best / is'.",
+options:["Honesty is the best policy.","The policy honesty best is.","Best honesty the policy is.","Honesty the policy is best the."],
+answer:0,
+explanation:"सही वाक्य है: Honesty is the best policy. इसका अर्थ है—ईमानदारी सर्वोत्तम नीति है।"
+},
+{
+id:"eng103",topic:"Sentence Rearrangement",
+question:"Choose the correct order to make a paragraph: (1) Finally, she submitted her work. (2) First, Rina read the question carefully. (3) Then she wrote her answers.",
+options:["1-2-3","2-3-1","3-1-2","2-1-3"],
+answer:1,
+explanation:"पहले प्रश्न पढ़ा गया, फिर उत्तर लिखे गए और अंत में कार्य जमा किया गया। सही क्रम 2-3-1 है।"
+},
+{
+id:"eng104",topic:"Cloze Test",
+question:"Fill in the blank: 'The sun _____ in the east.'",
+options:["Rise","Rises","Rising","Rose"],
+answer:1,
+explanation:"सामान्य सत्य के लिए simple present tense का प्रयोग होता है। Third-person singular subject the sun के साथ rises आता है।"
+},
+{
+id:"eng105",topic:"Cloze Test",
+question:"Fill in the blank: 'If you work hard, you _____ succeed.'",
+options:["Will","Would have","Had","Are"],
+answer:0,
+explanation:"First conditional में If + simple present के बाद सामान्यतः will + base verb आता है।"
+},
+{
+id:"eng106",topic:"Cloze Test",
+question:"Fill in the blank: 'She was hungry, _____ she ate a sandwich.'",
+options:["Because","So","Although","Unless"],
+answer:1,
+explanation:"So परिणाम बताता है। वह भूखी थी, इसलिए उसने सैंडविच खाया।"
+},
+{
+id:"eng107",topic:"Cloze Test",
+question:"Fill in the blank: 'There is _____ milk in the glass.'",
+options:["Many","Few","Some","Several"],
+answer:2,
+explanation:"Some का प्रयोग सकारात्मक वाक्यों में uncountable noun milk के साथ किया जा सकता है।"
+},
+{
+id:"eng108",topic:"Cloze Test",
+question:"Fill in the blank: 'The students listened _____ to the teacher.'",
+options:["Careful","Carefully","Carefulness","Care"],
+answer:1,
+explanation:"Listened क्रिया को कैसे किया गया, यह बताने के लिए adverb carefully का प्रयोग होता है।"
+},
+{
+id:"eng109",topic:"English Language Pedagogy",
+question:"What is the main aim of teaching English at the primary level?",
+options:["Memorising grammar rules only","Developing meaningful communication skills","Learning difficult literary terms","Translating every sentence into the mother tongue"],
+answer:1,
+explanation:"प्राथमिक स्तर पर अंग्रेज़ी शिक्षण का प्रमुख उद्देश्य बच्चों में सार्थक संचार और भाषा-प्रयोग की क्षमता विकसित करना है।"
+},
+{
+id:"eng110",topic:"English Language Pedagogy",
+question:"Which approach gives learners opportunities to use English in real-life situations?",
+options:["Rote memorisation approach","Communicative Language Teaching","Translation-only method","Silent copying method"],
+answer:1,
+explanation:"Communicative Language Teaching में भाषा का उपयोग वास्तविक संवाद और उद्देश्यपूर्ण परिस्थितियों में कराया जाता है।"
+},
+{
+id:"eng111",topic:"English Language Pedagogy",
+question:"A child makes grammatical errors while speaking English. What should the teacher do first?",
+options:["Stop the child from speaking","Punish the child","Encourage communication and provide supportive feedback","Ask the child to remain silent"],
+answer:2,
+explanation:"भाषा सीखते समय गलतियाँ स्वाभाविक हैं। शिक्षक को बच्चे का आत्मविश्वास बनाए रखते हुए उपयोगी प्रतिक्रिया देनी चाहिए।"
+},
+{
+id:"eng112",topic:"English Language Pedagogy",
+question:"Which activity is most suitable for developing listening skills?",
+options:["Copying a paragraph","Listening to a short story and answering questions","Memorising spellings silently","Writing a long essay without discussion"],
+answer:1,
+explanation:"कहानी सुनकर प्रश्नों के उत्तर देना सुनने और अर्थ समझने के कौशल का आकलन करता है।"
+},
+{
+id:"eng113",topic:"English Language Pedagogy",
+question:"Which activity is most useful for developing speaking skills?",
+options:["Silent reading only","Pair conversation and role-play","Copying definitions","Memorising punctuation rules"],
+answer:1,
+explanation:"Pair conversation और role-play बच्चों को अंग्रेज़ी बोलने तथा संवाद करने का वास्तविक अभ्यास देते हैं।"
+},
+{
+id:"eng114",topic:"English Language Pedagogy",
+question:"A teacher wants to improve learners' reading comprehension. Which practice is most appropriate?",
+options:["Ask learners to memorise the passage","Ask prediction, inference and text-based questions","Focus only on handwriting","Ask learners to copy the passage repeatedly"],
+answer:1,
+explanation:"पूर्वानुमान, निष्कर्ष निकालना और पाठ-आधारित प्रश्न पूछना अर्थपूर्ण पठन और comprehension को विकसित करता है।"
+},
+{
+id:"eng115",topic:"English Language Pedagogy",
+question:"What is the purpose of formative assessment in English language teaching?",
+options:["To rank children only at the end of the year","To identify learning needs and improve teaching during learning","To punish learners for errors","To replace all classroom activities with tests"],
+answer:1,
+explanation:"Formative assessment सीखने की प्रक्रिया के दौरान कठिनाइयों को पहचानकर शिक्षण और सीखने में सुधार करने में मदद करता है।"
+},
+{
+id:"eng116",topic:"English Language Pedagogy",
+question:"How should a teacher support a learner who has difficulty reading English?",
+options:["Give the learner harder texts immediately","Provide graded texts, guided reading and regular practice","Exclude the learner from reading activities","Compare the learner negatively with classmates"],
+answer:1,
+explanation:"स्तरानुसार पाठ, निर्देशित पठन और नियमित अभ्यास बच्चे की आवश्यकता के अनुसार सहायता देते हैं।"
+},
+{
+id:"eng117",topic:"English Language Pedagogy",
+question:"Why can a learner's home language be useful while learning English?",
+options:["It must replace all English practice","It can help connect new concepts with prior knowledge","It prevents all language learning","It should never be acknowledged"],
+answer:1,
+explanation:"घर की भाषा से परिचित अवधारणाओं और नए अंग्रेज़ी शब्दों के बीच संबंध बनाने में सहायता मिल सकती है।"
+},
+{
+id:"eng118",topic:"English Language Pedagogy",
+question:"Which is the best way to teach new vocabulary to young learners?",
+options:["Give a list of words without context","Use pictures, objects, examples and meaningful contexts","Ask learners to copy each word fifty times","Teach only dictionary definitions"],
+answer:1,
+explanation:"चित्रों, वास्तविक वस्तुओं और संदर्भों से नए शब्दों का अर्थ समझना और याद रखना आसान होता है।"
+},
+{
+id:"eng119",topic:"English Language Pedagogy",
+question:"In a mixed-ability English classroom, what should a teacher do?",
+options:["Give identical support regardless of need","Use varied tasks and provide support according to learners' needs","Teach only the highest-performing learners","Avoid group activities"],
+answer:1,
+explanation:"विभिन्न स्तरों के अनुरूप गतिविधियाँ और आवश्यक सहायता देना समावेशी तथा प्रभावी शिक्षण का हिस्सा है।"
+},
+{
+id:"eng120",topic:"English Language Pedagogy",
+question:"Which classroom practice best supports an inclusive English language classroom?",
+options:["Allow only fluent speakers to participate","Use varied materials and encourage every learner to participate","Correct every error by interrupting immediately","Give the same reading level to every learner regardless of need"],
+answer:1,
+explanation:"विविध सामग्री, सहभागिता के समान अवसर और आवश्यकता के अनुसार सहायता सभी बच्चों को सीखने में मदद करते हैं।"
     }
-  ],
+],
 
   hindi: [
 {
