@@ -609,14 +609,12 @@ window.scrollTo({ top: 0, behavior: "smooth" });
 return;
 }
 
-// यदि इसी पेज पर पिछली स्क्रीन उपलब्ध है तो वहीं लौटें
+// अन्य विषयों में पिछली स्क्रीन पर लौटें
 if (window.history.length > 1) {
 window.history.back();
-return;
-}
-
-// इतिहास उपलब्ध न होने पर होम खोलें
+} else {
 window.location.href = "index.html";
+}
 };
 startSubject();
 </script>
