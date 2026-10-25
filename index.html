@@ -373,7 +373,7 @@ let title=String(activeLesson[0]||"").trim();
 
 /* अध्याय के नाम के अनुसार प्रश्न बैंक के वास्तविक topic */
 const topicMap={
-"संख्या और स्थानीय मान":["संख्या पद्धति","विभाज्यता","घातांक"],
+"संख्या और स्थानीय मान":["संख्या पद्धति"],
 "जोड़, घटाव, गुणा और भाग":["मूल संक्रियाएँ","सरलीकरण"],
 "भिन्न":["भिन्न"],"दशमलव":["दशमलव"],"HCF और LCM":["HCF और LCM"],
 "प्रतिशत":["प्रतिशत"],"अनुपात और समानुपात":["अनुपात","समानुपात","इकाई विधि"],
@@ -415,7 +415,6 @@ $("lessonCard").classList.add("hidden");
 $("statsCard").classList.remove("hidden");
 $("quizCard").classList.remove("hidden");
 $("backToLesson").classList.remove("hidden");
-
 render();
 
 if(!questions.length){
@@ -508,7 +507,6 @@ f.textContent=
 "✅ सही उत्तर! ":
 "❌ सही उत्तर: "+["A","B","C","D"][q.answer]+". ")+
 (q.explanation||"");
-
 if(update){
 $("attempted").textContent=attempted;
 $("correct").textContent=score;
@@ -520,7 +518,7 @@ if(position<questions.length-1){
 position++;
 render();
 }else{
- alert("इस अभ्यास के उपलब्ध प्रश्न पूरे हुए!");
+alert("इस अभ्यास के उपलब्ध प्रश्न पूरे हुए!");
 }
 };
 
