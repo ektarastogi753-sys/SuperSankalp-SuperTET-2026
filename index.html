@@ -1,453 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#14213d">
-
 <title>SuperSankalp | Super TET 2026</title>
-
 <style>
-:root {
-  --navy: #14213d;
-  --blue: #2457a7;
-  --gold: #fca311;
-  --paper: #f5f7fb;
-  --green: #16794b;
-  --red: #b42318;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--paper);
-  color: #172033;
-}
-
-header {
-  background: linear-gradient(135deg, #14213d, #2457a7);
-  color: white;
-  padding: 24px 16px;
-  text-align: center;
-}
-
-.brand {
-  color: #ffd98a;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-h1 {
-  font-size: 34px;
-  margin: 10px 0;
-}
-
-.container {
-  max-width: 850px;
-  margin: 20px auto;
-  padding: 0 14px;
-}
-
-.card {
-  background: white;
-  padding: 18px;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 5px 20px #14213d10;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-select, button {
-  width: 100%;
-  padding: 13px;
-  font-size: 16px;
-  border-radius: 10px;
-}
-
-select {
-  border: 1px solid #ccd4e0;
-  background: white;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: var(--blue);
-  color: white;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-button:disabled {
-  cursor: default;
-  opacity: .7;
-}
-
-.option {
-  text-align: left;
-  background: white;
-  color: #172033;
-  border: 1px solid #d5dce8;
-  margin: 5px 0;
-}
-
-.option.correct {
-  background: #e8f8ef;
-  border: 2px solid var(--green);
-}
-
-.option.wrong {
-  background: #fff0ef;
-  border: 2px solid var(--red);
-}
-
-.question {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.6;
-}
-
-.feedback {
-  display: none;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 10px;
-  line-height: 1.6;
-}
-
-.feedback.show {
-  display: block;
-}
-
-.feedback.good {
-  background: #e8f8ef;
-}
-
-.feedback.bad {
-  background: #fff0ef;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  text-align: center;
-}
-
-.stat {
-  padding: 12px;
-  background: #eef3fb;
-  border-radius: 10px;
-}
-
-.stat strong {
-  display: block;
-  color: var(--blue);
-  font-size: 23px;
-}
-
-.small {
-  color: #64748b;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #64748b;
-}
-
-@media(max-width:500px) {
-  h1 { font-size: 28px; }
-  .question { font-size: 18px; }
-}
+:root{--navy:#14213d;--blue:#2457a7;--gold:#fca311;--paper:#f5f7fb;--green:#16794b;--red:#b42318}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--paper);color:#172033}
+header{background:linear-gradient(135deg,#14213d,#2457a7);color:white;padding:24px 16px;text-align:center}
+.brand{color:#ffd98a;font-size:13px;font-weight:bold;letter-spacing:2px}
+h1{font-size:32px;margin:10px 0}
+.container{max-width:850px;margin:20px auto;padding:0 14px}
+.card{background:white;padding:18px;border-radius:15px;margin-bottom:15px;box-shadow:0 5px 20px #14213d10}
+label{display:block;font-weight:bold;margin:8px 0}
+select,button{width:100%;padding:13px;font-size:16px;border-radius:10px}
+select{border:1px solid #ccd4e0;background:white;color:#172033}
+button{cursor:pointer;border:0;background:var(--blue);color:white;font-weight:bold;margin-top:8px}
+button:disabled{opacity:.7;cursor:default}
+.option{text-align:left;background:white;color:#172033;border:1px solid #d5dce8;margin:5px 0}
+.option.correct{background:#e8f8ef;border:2px solid var(--green)}
+.option.wrong{background:#fff0ef;border:2px solid var(--red)}
+.question{font-size:20px;font-weight:bold;line-height:1.6}
+.feedback{display:none;padding:12px;margin-top:12px;border-radius:10px;line-height:1.7;white-space:pre-line}
+.feedback.show{display:block}
+.feedback.good{background:#e8f8ef}
+.feedback.bad{background:#fff0ef}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.stat{padding:12px;background:#eef3fb;border-radius:10px}
+.stat strong{display:block;color:var(--blue);font-size:23px}
+.small{color:#64748b;font-size:13px;line-height:1.6}
+.lesson-content{line-height:1.9;white-space:pre-line;font-size:16px}
+.tip{background:#fff7e6;border-left:4px solid var(--gold);padding:12px;border-radius:8px;margin:12px 0;line-height:1.8}
+.hidden{display:none!important}
+footer{text-align:center;padding:20px;color:#64748b}
+@media(max-width:500px){h1{font-size:27px}.question{font-size:18px}.card{padding:15px}}
 </style>
 </head>
 
 <body>
-
 <header>
-  <div class="brand">UPESSC • SUPER TET 2026</div>
-  <h1>SuperSankalp</h1>
-  <div>Smart MCQ Practice • Learn • Practice • Improve</div>
+<div class="brand">UPESSC • SUPER TET 2026</div>
+<h1>SuperSankalp</h1>
+<div>पहले समझें • फिर अभ्यास करें • फिर सुधारें</div>
 </header>
 
 <main class="container">
 
-  <section class="card">
-    <label for="subject">अपना विषय चुनें</label>
+<section class="card">
+<label for="subject">अपना विषय चुनें</label>
+<select id="subject">
+<option value="gk">सामान्य ज्ञान एवं समसामयिक घटनाएँ</option>
+<option value="hindi">हिंदी</option>
+<option value="sanskrit">संस्कृत</option>
+<option value="english">अंग्रेजी</option>
+<option value="math">गणित — पहले सीखें, फिर MCQ</option>
+<option value="science">विज्ञान — पहले सीखें, फिर MCQ</option>
+<option value="evs">पर्यावरण एवं सामाजिक अध्ययन</option>
+<option value="teaching">शिक्षण कौशल</option>
+<option value="child">बाल मनोविज्ञान</option>
+<option value="life">जीवन कौशल, प्रबंधन एवं अभिवृत्ति</option>
+<option value="reasoning">तार्किक क्षमता</option>
+<option value="it">सूचना तकनीकी</option>
+</select>
+<p class="small">गणित और विज्ञान में पहले आसान भाषा में पाठ पढ़ें। फिर उसी विषय के उपलब्ध MCQ हल करें।</p>
+</section>
 
-    <select id="subject">
-      <option value="gk">सामान्य ज्ञान एवं समसामयिक घटनाएँ</option>
-      <option value="hindi">हिंदी</option>
-      <option value="sanskrit">संस्कृत</option>
-      <option value="english">अंग्रेजी</option>
-      <option value="math">गणित</option>
-      <option value="science">विज्ञान</option>
-      <option value="evs">पर्यावरण एवं सामाजिक अध्ययन</option>
-      <option value="teaching">शिक्षण कौशल</option>
-      <option value="child">बाल मनोविज्ञान</option>
-      <option value="life">जीवन कौशल, प्रबंधन एवं अभिवृत्ति</option>
-      <option value="reasoning">तार्किक क्षमता</option>
-      <option value="it">सूचना तकनीकी</option>
-    </select>
-  </section>
+<section class="card hidden" id="lessonCard">
+<h2 id="lessonHeading">पहले समझें</h2>
+<label for="lessonSelect">अध्याय चुनें</label>
+<select id="lessonSelect"></select>
+<h3 id="lessonTitle"></h3>
+<div class="lesson-content" id="lessonContent"></div>
+<div class="tip" id="lessonTip"></div>
+<button id="startLessonQuiz">समझ लिया — अब इसी अध्याय के MCQ हल करें →</button>
+<button id="allQuestions" style="background:#64748b">इस विषय के सभी उपलब्ध MCQ देखें</button>
+</section>
 
-  <section class="card">
-    <div class="stats">
-      <div class="stat">
-        <strong id="total">0</strong>
-        <span>कुल प्रश्न</span>
-      </div>
+<section class="card" id="statsCard">
+<div class="stats">
+<div class="stat"><strong id="total">0</strong>कुल प्रश्न</div>
+<div class="stat"><strong id="attempted">0</strong>हल किए</div>
+<div class="stat"><strong id="correct">0</strong>सही उत्तर</div>
+</div>
+</section>
 
-      <div class="stat">
-        <strong id="attempted">0</strong>
-        <span>हल किए</span>
-      </div>
+<section class="card" id="quizCard">
+<div id="counter" class="small"></div>
+<p id="question" class="question"></p>
+<div id="options"></div>
+<div id="feedback" class="feedback"></div>
+<button id="next">अगला प्रश्न →</button>
+<button id="backToLesson" class="hidden" style="background:#64748b">पाठ पर वापस जाएँ</button>
+<button id="restart" style="background:#64748b">इस विषय का अभ्यास फिर शुरू करें</button>
+</section>
 
-      <div class="stat">
-        <strong id="correct">0</strong>
-        <span>सही उत्तर</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="card">
-    <div id="counter" class="small"></div>
-
-    <p id="question" class="question"></p>
-
-    <div id="options"></div>
-
-    <div id="feedback" class="feedback"></div>
-
-    <button id="next">अगला प्रश्न →</button>
-
-    <button id="restart" style="background:#64748b">
-      इस विषय का अभ्यास फिर शुरू करें
-    </button>
-  </section>
-
-  <section class="card">
-    <strong>प्रश्न बैंक की स्थिति</strong>
-    <p id="status" class="small"></p>
-
-    <p class="small">
-      यह स्वतंत्र अभ्यास ऐप है। प्रश्नों को आधिकारिक पाठ्यक्रम,
-      NCERT, CTET और संबंधित विश्वसनीय स्रोतों के आधार पर
-      सत्यापित करके जोड़ा जाएगा। वास्तविक परीक्षा में किसी
-      प्रश्न के आने की गारंटी नहीं है।
-    </p>
-  </section>
+<section class="card">
+<strong>प्रश्न बैंक की स्थिति</strong>
+<p id="status" class="small"></p>
+<p class="small">यह स्वतंत्र अभ्यास ऐप है। प्रश्नों को आधिकारिक पाठ्यक्रम, NCERT, CTET और विश्वसनीय स्रोतों के आधार पर सत्यापित करें। किसी प्रश्न के परीक्षा में आने की गारंटी नहीं है।</p>
+</section>
 
 </main>
 
-<footer>
-  SuperSankalp • Super TET 2026 Practice
-</footer>
+<footer>SuperSankalp • Super TET 2026 Practice</footer>
 
 <script src="questions.js"></script>
 
 <script>
-const subject = document.getElementById("subject");
+const $=id=>document.getElementById(id);
+const subject=$("subject");
+const lessonSelect=$("lessonSelect");
 
-let questions = [];
-let position = 0;
-let answered = {};
-let score = 0;
-let attempted = 0;
+let questions=[];
+let position=0;
+let answered={};
+let score=0;
+let attempted=0;
+let activeLesson=null;
 
-function loadProgress() {
-  try {
-    return JSON.parse(
-      localStorage.getItem("supersankalp-progress") || "{}"
-    );
-  } catch {
-    return {};
-  }
-}
+/* गणित के पाठ */
+const L={
 
-function saveProgress(data) {
-  localStorage.setItem(
-    "supersankalp-progress",
-    JSON.stringify(data)
-  );
-}
+math:[
 
-function startSubject() {
-  const bank = window.QUESTION_BANK || {};
+["संख्या और स्थानीय मान",
+"संख्या गिनती या मात्रा बताती है। 352 में 3 सैकड़े की जगह पर है, इसलिए उसका स्थानीय मान 300 है; 5 का 50 और 2 का 2 है।\n\nदाएँ से स्थान याद करें: इकाई, दहाई, सैकड़ा, हजार। उदाहरण: 4,582 में 5 का स्थानीय मान 500 है।",
+"अंक का स्थानीय मान जानने के लिए देखें कि वह किस स्थान पर बैठा है।",
+["संख्या","स्थानीय मान"]],
 
-  questions = bank[subject.value] || [];
-  position = 0;
+["जोड़, घटाव, गुणा और भाग",
+"जोड़ चीजें मिलाना है: 3 आम + 2 आम = 5। घटाव कम करना है: 9 टॉफी में से 4 दे दीं तो 5 बचीं।\n\nगुणा बार-बार जोड़ने का छोटा तरीका है: 4 × 3 = 4+4+4 = 12। भाग बराबर बाँटना है: 12 टॉफियाँ 3 बच्चों में बाँटें तो हर एक को 4 मिलेंगी।",
+"जाँच: भागफल × भाजक + शेष = भाज्य।",
+["जोड़","गुणा","भाग"]],
 
-  const progress = loadProgress();
-  answered = progress[subject.value] || {};
+["भिन्न",
+"भिन्न पूरी चीज के बराबर हिस्से को दिखाती है। एक रोटी के 4 बराबर टुकड़ों में से 1 टुकड़ा = 1/4। ऊपर की संख्या अंश और नीचे की संख्या हर है।\n\nहर समान हो तो अंश जोड़ें: 1/5 + 2/5 = 3/5। अलग हर हों तो पहले समान करें: 1/2 + 1/4 = 2/4 + 1/4 = 3/4।",
+"अलग-अलग हरों को सीधे जोड़ना सही नहीं।",
+["भिन्न","fraction"]],
 
-  score = 0;
-  attempted = Object.keys(answered).length;
+["दशमलव",
+"दशमलव बिंदु के बाद दसवाँ, सौवाँ आदि स्थान आते हैं। ₹1 में 100 पैसे हैं, इसलिए 50 पैसे = ₹0.50।\n\nजोड़ते समय बिंदु एक सीध में रखें: 2.5 + 1.25 = 2.50 + 1.25 = 3.75। 2.5 और 2.50 बराबर हैं।",
+"जरूरत हो तो दशमलव के बाद शून्य लगा सकते हैं।",
+["दशमलव","decimal"]],
 
-  Object.values(answered).forEach(item => {
-    if (item.correct) score++;
-  });
+["HCF और LCM",
+"HCF वह सबसे बड़ी संख्या है जो दी गई संख्याओं को पूरा-पूरा बाँट दे। 12 और 18 का HCF = 6।\n\nLCM दोनों संख्याओं का सबसे छोटा समान गुणज है। 12 के गुणज: 12,24,36… 18 के: 18,36… इसलिए LCM = 36।",
+"HCF में बाँटने वाली संख्या; LCM में मिलने वाला सबसे छोटा समान गुणज याद रखें।",
+["HCF","LCM"]],
 
-  render();
-}
+["प्रतिशत",
+"प्रतिशत का अर्थ है हर 100 में से। 25% = 25/100 = 1/4।\n\nसूत्र: किसी संख्या का x% = संख्या × x ÷ 100। उदाहरण: 200 का 15% = 200×15÷100 = 30।\n\n50% आधा, 25% चौथाई, 10% दसवाँ हिस्सा और 1% सौवाँ हिस्सा है।",
+"पहले संख्या को प्रतिशत से गुणा करें, फिर 100 से भाग दें।",
+["प्रतिशत","percentage"]],
 
-function render() {
-  document.getElementById("total").textContent =
-    questions.length;
+["अनुपात और समानुपात",
+"अनुपात दो मात्राओं की तुलना है। 2 सेब और 3 केले हों तो अनुपात 2:3। इकाइयाँ पहले समान करें: 1 मीटर = 100 सेंटीमीटर, इसलिए 1 मीटर : 50 सेंटीमीटर = 100:50 = 2:1।\n\nसमानुपात में दो अनुपात बराबर होते हैं, जैसे 1:2 = 2:4।",
+"अनुपात सरल करने के लिए दोनों संख्याओं को एक ही संख्या से भाग दें।",
+["अनुपात","समानुपात"]],
 
-  document.getElementById("attempted").textContent =
-    attempted;
+["औसत",
+"औसत का अर्थ है कुल को बराबर बाँटने पर हर एक का हिस्सा।\n\nसूत्र: औसत = सभी संख्याओं का योग ÷ संख्याओं की संख्या। 4,6,8 का योग 18 है; 3 संख्याएँ हैं, इसलिए औसत 18÷3 = 6।",
+"पहले जोड़ें, फिर संख्याओं की गिनती से भाग दें।",
+["औसत","average"]],
 
-  document.getElementById("correct").textContent =
-    score;
+["लाभ और हानि",
+"क्रय मूल्य (CP) खरीदने की कीमत है; विक्रय मूल्य (SP) बेचने की कीमत। SP ज्यादा हो तो लाभ, CP ज्यादा हो तो हानि।\n\n₹100 की वस्तु ₹120 में बेची: लाभ ₹20। लाभ प्रतिशत = 20÷100×100 = 20%।\n\nलाभ = SP−CP; हानि = CP−SP। प्रतिशत निकालते समय CP से भाग दें।",
+"लाभ/हानि प्रतिशत का आधार सामान्यतः क्रय मूल्य होता है।",
+["लाभ","हानि","क्रय मूल्य"]],
 
-  document.getElementById("status").textContent =
-    "इस विषय में अभी " + questions.length +
-    " प्रश्न उपलब्ध हैं। निर्धारित पूर्ण प्रश्न बैंक तैयार होने पर " +
-    "यह संख्या बढ़ाई जाएगी।";
+["साधारण ब्याज",
+"मूलधन शुरुआती रकम है, दर वार्षिक प्रतिशत और समय वर्षों में होता है।\n\nसूत्र: ब्याज = मूलधन × दर × समय ÷ 100। ₹2,000 पर 5% दर से 3 साल: 2000×5×3÷100 = ₹300।\n\nक्यों? ₹2,000 में ₹100 के 20 समूह हैं। हर समूह पर ₹5 सालाना ब्याज, इसलिए एक साल ₹100 और तीन साल ₹300।",
+"कुल राशि = मूलधन + ब्याज।",
+["साधारण ब्याज","ब्याज"]],
 
-  const q = questions[position];
+["समय और कार्य",
+"यदि कोई पूरा काम 10 दिन में करता है तो एक दिन में 1/10 काम करता है।\n\nA काम 10 दिन में और B 15 दिन में करता है। एक दिन का संयुक्त काम = 1/10+1/15 = 3/30+2/30 = 1/6। इसलिए दोनों काम 6 दिन में करेंगे।",
+"दिन सीधे न जोड़ें; एक दिन में होने वाला काम जोड़ें।",
+["समय और कार्य","कार्य"]],
 
-  const optionsBox = document.getElementById("options");
-  const feedback = document.getElementById("feedback");
+["चाल, समय और दूरी",
+"चाल = दूरी ÷ समय। दूरी = चाल × समय। समय = दूरी ÷ चाल।\n\nबस 3 घंटे में 150 किमी चली: चाल = 150÷3 = 50 किमी/घंटा।\n\nकिमी/घंटा से मीटर/सेकंड के लिए 5/18 से गुणा करें: 36×5/18 = 10 मीटर/सेकंड।",
+"तीनों सूत्र याद करें: चाल = दूरी/समय।",
+["चाल","दूरी","गति"]],
 
-  optionsBox.innerHTML = "";
-  feedback.className = "feedback";
-  feedback.textContent = "";
+["आयु के प्रश्न",
+"भविष्य की आयु निकालने के लिए वर्ष जोड़ें; पिछली आयु के लिए घटाएँ। वर्तमान आयु 12 है, तो 5 वर्ष बाद 12+5 = 17 वर्ष।\n\nअज्ञात संख्या को x मानें: x+8=20, इसलिए x=20−8=12। दो लोगों की आयु का अंतर समय बीतने पर नहीं बदलता।",
+"भविष्य = जोड़; अतीत = घटाव।",
+["आयु","उम्र"]],
 
-  if (!q) {
-    document.getElementById("counter").textContent =
-      "इस विषय में अभी प्रश्न उपलब्ध नहीं हैं।";
+["बीजगणित",
+"x या y किसी अज्ञात संख्या का नाम है। x+5=12 में x को अकेला करने के लिए दोनों ओर से 5 घटाएँ: x=7।\n\n3x=21 का अर्थ 3×x=21 है। दोनों ओर 3 से भाग दें: x=7।",
+"जोड़ का उल्टा घटाना, घटाव का उल्टा जोड़ना, गुणा का उल्टा भाग और भाग का उल्टा गुणा।",
+["बीजगणित","समीकरण","algebra"]]
 
-    document.getElementById("question").textContent =
-      "प्रश्न बैंक अपडेट होने पर यहाँ प्रश्न दिखाई देंगे।";
+],
 
-    document.getElementById("next").disabled = true;
-    return;
-  }
+/* विज्ञान के पाठ */
+science:[
 
-  document.getElementById("next").disabled = false;
+["जीवित और निर्जीव",
+"पौधे, मनुष्य और जानवर जीवित हैं। पत्थर, कुर्सी और किताब निर्जीव हैं। जीवित चीजें बढ़ती हैं, ऊर्जा/भोजन की जरूरत होती है, वातावरण पर प्रतिक्रिया देती हैं और जीवन-चक्र से गुजरती हैं। पौधे जगह बदलकर नहीं चलते, फिर भी जीवित हैं।",
+"केवल चलना जीवित होने की पहचान नहीं है।",
+["जीवित","निर्जीव"]],
 
-  document.getElementById("counter").textContent =
-    "प्रश्न " + (position + 1) + " / " + questions.length;
+["पौधे और प्रकाश संश्लेषण",
+"पौधे सूर्य के प्रकाश, पानी और हवा की कार्बन डाइऑक्साइड से अपना भोजन बनाते हैं। इस प्रक्रिया को प्रकाश संश्लेषण कहते हैं। पत्तियों में क्लोरोफिल नाम का हरा पदार्थ प्रकाश पकड़ने में मदद करता है। इस प्रक्रिया में ऑक्सीजन भी निकलती है।",
+"प्रकाश + पानी + कार्बन डाइऑक्साइड से भोजन; ऑक्सीजन बाहर।",
+["प्रकाश संश्लेषण","पौधे","photosynthesis"]],
 
-  document.getElementById("question").textContent =
-    q.question;
+["मानव शरीर और पाचन",
+"पाचन भोजन को छोटे उपयोगी पदार्थों में तोड़ता है। यह मुँह से शुरू होता है। दाँत भोजन चबाते हैं और लार पाचन की शुरुआत में मदद करती है। पेट भोजन को मिलाता है। छोटी आँत में अधिकतर पोषक तत्व अवशोषित होते हैं। बड़ी आँत पानी के अवशोषण में मदद करती है।",
+"पाचन भोजन तोड़ता है; अवशोषण पोषक तत्वों को शरीर में पहुँचाता है।",
+["पाचन","मानव शरीर"]],
 
-  q.options.forEach((text, index) => {
-    const button = document.createElement("button");
+["भोजन और पोषक तत्व",
+"कार्बोहाइड्रेट और वसा ऊर्जा देते हैं। प्रोटीन वृद्धि और ऊतकों की मरम्मत में मदद करता है। विटामिन और खनिज शरीर की प्रक्रियाओं को सही रखने में सहायक हैं। पानी और रेशा भी जरूरी हैं। दाल में प्रोटीन, रोटी-चावल में कार्बोहाइड्रेट और तेल में वसा होती है।",
+"संतुलित भोजन में अलग-अलग प्रकार के खाद्य पदार्थ शामिल करें।",
+["पोषक तत्व","भोजन","nutrition"]],
 
-    button.className = "option";
-    button.textContent =
-      ["A. ", "B. ", "C. ", "D. "][index] + text;
+["पदार्थ की अवस्थाएँ",
+"पदार्थ की तीन सामान्य अवस्थाएँ ठोस, द्रव और गैस हैं। पत्थर ठोस है, पानी द्रव है और हवा गैसों का मिश्रण है। ठोस का आकार सामान्यतः तय रहता है; द्रव बर्तन का आकार लेता है; गैस उपलब्ध जगह में फैलती है। बर्फ गर्म होकर पानी और पानी गर्म होकर भाप बन सकता है।",
+"ठोस → पिघलकर द्रव → गर्म होकर गैस।",
+["पदार्थ","ठोस","द्रव","गैस"]],
 
-    button.onclick = () => selectAnswer(index);
+["बल और गति",
+"बल धक्का या खिंचाव है। दरवाजा धक्का देकर खोलना और रस्सी खींचना उदाहरण हैं। बल वस्तु की गति, दिशा या आकार बदल सकता है। घर्षण संपर्क में आई सतहों की गति का विरोध करता है; जूते और जमीन की पकड़ चलने में मदद करती है।",
+"बल = धक्का या खिंचाव।",
+["बल","गति","force"]],
 
-    optionsBox.appendChild(button);
-  });
+["प्रकाश और ध्वनि",
+"प्रकाश से हम वस्तुओं को देखते हैं। प्रकाश वस्तु से परावर्तित होकर आँख तक पहुँचता है। ध्वनि कंपन से पैदा होती है; घंटी बजाने पर वह कंपन करती है। ध्वनि को फैलने के लिए माध्यम चाहिए, इसलिए निर्वात में ध्वनि नहीं फैलती।",
+"ध्वनि कंपन से बनती है; निर्वात में नहीं फैलती।",
+["प्रकाश","ध्वनि","sound"]],
 
-  if (answered[q.id]) {
-    showAnswer(answered[q.id].selected, false);
-  }
-}
+["बिजली और चुंबक",
+"सरल विद्युत परिपथ में बैटरी, तार और बल्ब हो सकते हैं। परिपथ पूरा होने पर धारा बह सकती है। स्विच परिपथ जोड़ता या तोड़ता है। गीले हाथों से बिजली के उपकरण न छुएँ। चुंबक लोहे जैसी कुछ चीजों को आकर्षित करता है। समान ध्रुव दूर धकेलते हैं और विपरीत ध्रुव आकर्षित करते हैं।",
+"बिजली में सुरक्षा जरूरी: खुले तारों से दूर रहें।",
+["विद्युत","बिजली","चुंबक"]],
 
-function selectAnswer(index) {
-  const q = questions[position];
+["पृथ्वी, जल और वायु",
+"हवा गैसों का मिश्रण है; इसमें नाइट्रोजन सबसे अधिक और ऑक्सीजन लगभग 21% होती है। जल चक्र में सूर्य की गर्मी से पानी वाष्प बनता है, ठंडा होकर बादल बनाता है और वर्षा के रूप में लौट सकता है। साफ पानी और हवा जीवन के लिए जरूरी हैं।",
+"जल चक्र: वाष्पीकरण → संघनन → वर्षा।",
+["पृथ्वी","जल","वायु","पर्यावरण"]],
 
-  if (!q || answered[q.id]) return;
+["स्वास्थ्य, रोग और स्वच्छता",
+"स्वास्थ्य के लिए संतुलित भोजन, साफ पानी, नींद, गतिविधि और स्वच्छता जरूरी हैं। साबुन से हाथ धोना, सुरक्षित पानी पीना और खाँसते समय मुँह ढकना संक्रमण का जोखिम कम करता है। सभी रोग संक्रामक नहीं होते। दवा योग्य स्वास्थ्यकर्मी की सलाह से लें।",
+"स्वच्छता बीमारी फैलने का जोखिम कम करती है।",
+["स्वास्थ्य","रोग","स्वच्छता"]]
 
-  const isCorrect = index === q.answer;
-
-  answered[q.id] = {
-    selected: index,
-    correct: isCorrect
-  };
-
-  attempted++;
-
-  if (isCorrect) score++;
-
-  const progress = loadProgress();
-  progress[subject.value] = answered;
-  saveProgress(progress);
-
-  showAnswer(index, true);
-}
-
-function showAnswer(selected, updateStats) {
-  const q = questions[position];
-
-  const buttons = document.querySelectorAll(".option");
-
-  buttons.forEach((button, index) => {
-    button.disabled = true;
-
-    if (index === q.answer) {
-      button.classList.add("correct");
-    }
-
-    if (index === selected && selected !== q.answer) {
-      button.classList.add("wrong");
-    }
-  });
-
-  const feedback = document.getElementById("feedback");
-
-  feedback.className =
-    "feedback show " +
-    (selected === q.answer ? "good" : "bad");
-
-  feedback.textContent =
-    (selected === q.answer
-      ? "✅ सही उत्तर! "
-      : "❌ सही उत्तर: " +
-        ["A", "B", "C", "D"][q.answer] + ". ") +
-    (q.explanation || "");
-
-  if (updateStats) {
-    document.getElementById("attempted").textContent =
-      attempted;
-
-    document.getElementById("correct").textContent =
-      score;
-  }
-}
-
-document.getElementById("next").onclick = () => {
-  if (position < questions.length - 1) {
-    position++;
-    render();
-  } else {
-    alert("इस विषय के उपलब्ध प्रश्न पूरे हुए!");
-  }
+]
 };
 
-document.getElementById("restart").onclick = () => {
-  if (confirm("क्या इस विषय की प्रगति रीसेट करनी है?")) {
-    const progress = loadProgress();
-    delete progress[subject.value];
-    saveProgress(progress);
-    startSubject();
-  }
+function bank(){
+return (window.QUESTION_BANK||{})[subject.value]||[];
+}
+
+function loadProgress(){
+try{return JSON.parse(localStorage.getItem("supersankalp-progress")||"{}")}
+catch(e){return {}}
+}
+
+function saveProgress(p){
+try{localStorage.setItem("supersankalp-progress",JSON.stringify(p))}
+catch(e){}
+}
+
+function loadSubjectProgress(){
+const p=loadProgress();
+answered=p[subject.value]||{};
+attempted=Object.keys(answered).length;
+score=0;
+Object.values(answered).forEach(a=>{if(a.correct)score++});
+}
+
+function showLesson(){
+const list=L[subject.value]||[];
+activeLesson=list[Number(lessonSelect.value)]||list[0];
+if(!activeLesson)return;
+
+$("lessonTitle").textContent=activeLesson[0];
+$("lessonContent").textContent=activeLesson[1];
+$("lessonTip").textContent=
+"याद रखने की ट्रिक: "+activeLesson[2]+
+"\n\nउदाहरण को धीरे-धीरे पढ़ें। फिर बिना देखे अपने शब्दों में समझाने की कोशिश करें।";
+}
+
+function lessonMode(){
+$("lessonCard").classList.remove("hidden");
+$("statsCard").classList.add("hidden");
+$("quizCard").classList.add("hidden");
+
+$("lessonHeading").textContent=
+subject.value==="math"?
+"गणित को बिल्कुल शुरुआत से समझें":
+"विज्ञान को सरल भाषा में समझें";
+
+lessonSelect.innerHTML="";
+
+(L[subject.value]||[]).forEach((l,i)=>{
+let o=document.createElement("option");
+o.value=i;
+o.textContent=l[0];
+lessonSelect.appendChild(o);
+});
+
+showLesson();
+}
+
+function startSubject(){
+if(subject.value==="math"||subject.value==="science"){
+lessonMode();
+return;
+}
+
+$("lessonCard").classList.add("hidden");
+$("statsCard").classList.remove("hidden");
+$("quizCard").classList.remove("hidden");
+$("backToLesson").classList.add("hidden");
+
+questions=bank();
+position=0;
+loadSubjectProgress();
+render();
+}
+
+function startLessonQuiz(all=false){
+let b=bank();
+
+if(all){
+questions=b.slice();
+}else{
+let keys=activeLesson[3].map(x=>x.toLowerCase());
+
+questions=b.filter(q=>{
+let t=String(q.topic||"").toLowerCase();
+let s=String(q.question||"").toLowerCase();
+return keys.some(k=>t.includes(k)||s.includes(k));
+});
+}
+
+position=0;
+loadSubjectProgress();
+
+$("lessonCard").classList.add("hidden");
+$("statsCard").classList.remove("hidden");
+$("quizCard").classList.remove("hidden");
+$("backToLesson").classList.remove("hidden");
+
+render();
+
+if(!questions.length){
+$("counter").textContent="इस अध्याय के MCQ अभी प्रश्न बैंक में नहीं जोड़े गए हैं।";
+$("question").textContent=
+"पाठ उपलब्ध है, लेकिन इस अध्याय के प्रश्न अभी तैयार होने बाकी हैं। चाहें तो 'इस विषय के सभी उपलब्ध MCQ देखें' बटन से उपलब्ध प्रश्न कर सकते हैं।";
+$("options").innerHTML="";
+$("next").disabled=true;
+$("total").textContent="0";
+}
+}
+
+function render(){
+$("total").textContent=questions.length;
+$("attempted").textContent=attempted;
+$("correct").textContent=score;
+
+$("status").textContent=
+"इस विषय में अभी "+bank().length+
+" प्रश्न उपलब्ध हैं। पाठ उपलब्ध होना और उस पाठ के MCQ उपलब्ध होना अलग-अलग हैं।";
+
+let q=questions[position];
+let box=$("options");
+let fb=$("feedback");
+
+box.innerHTML="";
+fb.className="feedback";
+fb.textContent="";
+
+if(!q){
+$("counter").textContent=questions.length?
+"प्रश्न उपलब्ध नहीं हैं।":
+"इस विषय/अध्याय के MCQ अभी उपलब्ध नहीं हैं।";
+
+$("question").textContent=
+"प्रश्न बैंक में प्रश्न जोड़े जाने पर यहाँ दिखाई देंगे।";
+
+$("next").disabled=true;
+return;
+}
+
+$("next").disabled=false;
+$("counter").textContent="प्रश्न "+(position+1)+" / "+questions.length;
+$("question").textContent=q.question;
+
+(q.options||[]).forEach((t,i)=>{
+let b=document.createElement("button");
+b.className="option";
+b.textContent=["A. ","B. ","C. ","D. "][i]+t;
+b.onclick=()=>selectAnswer(i);
+box.appendChild(b);
+});
+
+if(answered[q.id])showAnswer(answered[q.id].selected,false);
+}
+
+function selectAnswer(i){
+let q=questions[position];
+if(!q||answered[q.id])return;
+
+let ok=i===q.answer;
+answered[q.id]={selected:i,correct:ok};
+attempted++;
+if(ok)score++;
+
+let p=loadProgress();
+p[subject.value]=answered;
+saveProgress(p);
+
+showAnswer(i,true);
+}
+
+function showAnswer(selected,update){
+let q=questions[position];
+if(!q)return;
+
+document.querySelectorAll(".option").forEach((b,i)=>{
+b.disabled=true;
+if(i===q.answer)b.classList.add("correct");
+if(i===selected&&selected!==q.answer)b.classList.add("wrong");
+});
+
+let f=$("feedback");
+f.className="feedback show "+(selected===q.answer?"good":"bad");
+f.textContent=
+(selected===q.answer?
+"✅ सही उत्तर! ":
+"❌ सही उत्तर: "+["A","B","C","D"][q.answer]+". ")+
+(q.explanation||"");
+
+if(update){
+$("attempted").textContent=attempted;
+$("correct").textContent=score;
+}
+}
+
+$("next").onclick=()=>{
+if(position<questions.length-1){
+position++;
+render();
+}else{
+alert("इस अभ्यास के उपलब्ध प्रश्न पूरे हुए!");
+}
 };
 
-subject.onchange = startSubject;
+$("restart").onclick=()=>{
+if(confirm("क्या इस विषय की प्रगति रीसेट करनी है?")){
+let p=loadProgress();
+delete p[subject.value];
+saveProgress(p);
+loadSubjectProgress();
+position=0;
+render();
+}
+};
+
+$("startLessonQuiz").onclick=()=>startLessonQuiz(false);
+$("allQuestions").onclick=()=>startLessonQuiz(true);
+$("backToLesson").onclick=lessonMode;
+lessonSelect.onchange=showLesson;
+subject.onchange=startSubject;
 
 startSubject();
 </script>
-
 </body>
-  </html>
+</html>
