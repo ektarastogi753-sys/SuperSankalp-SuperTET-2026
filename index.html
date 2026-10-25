@@ -395,7 +395,7 @@ const topicMap={
 const normalizeTopic=value=>String(value||"")
 .toLocaleLowerCase("hi")
 .normalize("NFC")
-.replace(/[\\s\\-–—]+/g," ")
+.replace(/[\s\-–—]+/g," ")
 .trim();
 
 let allowed=(topicMap[title]||[]).map(normalizeTopic);
