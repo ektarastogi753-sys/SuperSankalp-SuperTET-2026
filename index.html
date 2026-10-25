@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#65110c">
+
+<title>SuperSankalp | UPESSC PRT 2026</title>
+
+<style>
+:root {
+  --gold: #dba638;
+  --dark-gold: #9a5b08;
+  --red: #b5121b;
+  --navy: #142747;
+  --cream: #fff9e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, "Noto Sans Devanagari", sans-serif;
+}
+
+body {
+  background: #f8e8bf;
+  color: var(--navy);
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* आपका मूल चित्र */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("./home-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+/* खाली हिस्से में बटन */
+.controls {
+  width: 100%;
+  margin-top: auto;
+  padding: 0 5.5% max(12px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: clamp(9px, 1.6vh, 15px);
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: clamp(55px, 8.5vh, 76px);
+  padding: 5px 13px;
+  gap: 11px;
+  border: 2px solid var(--gold);
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    #fffdf5 0%,
+    #fff0ca 52%,
+    #fffaf0 100%
+  );
+  box-shadow:
+    0 3px 0 #9a5b08,
+    0 5px 12px rgba(75, 30, 0, 0.20),
+    inset 0 0 0 2px rgba(255,255,255,.85);
+}
+
+.icon {
+  flex: 0 0 clamp(43px, 12vw, 58px);
+  width: clamp(43px, 12vw, 58px);
+  height: clamp(43px, 12vw, 58px);
+  display: grid;
+  place-items: center;
+  color: white;
+  background: radial-gradient(circle at 35% 25%, #ff4a43, #cf0613 72%);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #e3ae3c, 0 2px 5px #9a5b08;
+}
+
+.icon svg {
+  width: 65%;
+  height: 65%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.divider {
+  align-self: stretch;
+  width: 1px;
+  background: #d7ad66;
+  flex-shrink: 0;
+}
+
+.dropdown select {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--navy);
+  font-size: clamp(16px, 4.4vw, 22px);
+  font-weight: 800;
+  font-family: inherit;
+  padding: 8px 20px 8px 0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.dropdown select:focus-visible {
+  outline: 2px solid #2457a7;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.chevron {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -9px;
+  border-right: 3px solid var(--navy);
+  border-bottom: 3px solid var(--navy);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.youtube-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 6px;
+  margin-top: clamp(5px, 1vh, 10px);
+}
+
+.youtube-link {
+  min-width: 0;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 4px;
+  border: 1.5px solid #df1720;
+  border-radius: 24px;
+  background: linear-gradient(#fffdf7, #fff0d4);
+  color: #172642;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: clamp(9px, 2.5vw, 12px);
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 5px #9b6b2b55;
+}
+
+.youtube-link svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 15px;
+}
+
+.youtube-link:active {
+  transform: scale(.98);
+}
+
+.developer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+  color: #24334c;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: clamp(11px, 3vw, 15px);
+  font-weight: bold;
+  text-shadow: 0 1px 2px white;
+}
+
+.developer::before,
+.developer::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bd8120);
+}
+
+.developer::after {
+  background: linear-gradient(90deg, #bd8120, transparent);
+}
+
+/* छोटी स्क्रीन */
+@media (max-height: 700px) {
+  .controls {
+    gap: 7px;
+    padding-bottom: max(7px, env(safe-area-inset-bottom));
+  }
+
+  .dropdown {
+    min-height: 52px;
+    border-radius: 17px;
+  }
+
+  .icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .youtube-link {
+    min-height: 33px;
+  }
+
+  .developer {
+    margin-top: 1px;
+  }
+}
+
+/* बहुत संकरी स्क्रीन */
+@media (max-width: 350px) {
+  .controls {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .dropdown {
+    gap: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .dropdown select {
+    font-size: 15px;
+  }
+
+  .youtube-row {
+    gap: 4px;
+  }
+
+  .youtube-link {
+    font-size: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="home" aria-label="SuperSankalp मुख्य पृष्ठ">
+
+  <section class="controls" aria-label="परीक्षा चुनें">
+
+    <!-- अध्ययन और MCQ -->
+    <div class="dropdown">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M5 10 Q15 6 24 13 Q33 6 43 10 V38 Q33 34 24 41 Q15 34 5 38 Z"/>
+          <path d="M24 13 V41"/>
+          <path d="M10 16 Q16 14 20 17"/>
+          <path d="M28 17 Q34 14 39 16"/>
+        </svg>
+      </span>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <select id="subjectSelect" aria-label="विषय चुनें">
+        <option value="" selected disabled>विषय चुनें</option>
+        <option value="prt.html">UPESSC PRT 2026</option>
+      </select>
+
+      <span class="chevron" aria-hidden="true"></span>
+    </div>
+
+    <!-- मॉडल प्रश्नपत्र -->
+    <div class="dropdown">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M13 5 H30 L38 13 V43 H13 Z"/>
+          <path d="M30 5 V13 H38"/>
+          <path d="M19 21 H32 M19 27 H32 M19 33 H32 M19 39 H28"/>
+        </svg>
+      </span>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <select id="modelSelect" aria-label="मॉडल प्रश्नपत्र चुनें">
+        <option value="" selected disabled>मॉडल प्रश्न पत्र</option>
+        <option value="coming-soon">UPESSC PRT 2026 — जल्द उपलब्ध</option>
+      </select>
+
+      <span class="chevron" aria-hidden="true"></span>
+    </div>
+
+    <!-- YouTube चैनल -->
+    <nav class="youtube-row" aria-label="हमारे YouTube चैनल">
+
+      <a class="youtube-link"
+         href="https://youtube.com/@ershubhamrastogi?si=5eHHZNRaLA2V0d4-"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 17" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="15" rx="4" fill="#f00"/>
+          <path d="M10 4 L17 8.5 L10 13 Z" fill="white"/>
+        </svg>
+        <span>Shubham Rastogi</span>
+      </a>
+
+      <a class="youtube-link"
+         href="https://youtube.com/@chandrainstituteallahabad?si=EgbITlj7jmYdVx4s"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 17" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="15" rx="4" fill="#f00"/>
+          <path d="M10 4 L17 8.5 L10 13 Z" fill="white"/>
+        </svg>
+        <span>Chandra Institute Allahabad</span>
+      </a>
+
+      <a class="youtube-link"
+         href="https://youtube.com/@teachingwallahbypw?si=UpjFWA062qTG47Tx"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 17" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="15" rx="4" fill="#f00"/>
+          <path d="M10 4 L17 8.5 L10 13 Z" fill="white"/>
+        </svg>
+        <span>Teaching Wallah by PW</span>
+      </a>
+
+    </nav>
+
+    <div class="developer">
+      App Developer: Shubham Rastogi
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+"use strict";
+
+const subjectSelect = document.getElementById("subjectSelect");
+const modelSelect = document.getElementById("modelSelect");
+
+subjectSelect.addEventListener("change", function () {
+  if (this.value === "prt.html") {
+    window.location.href = "./prt.html";
+  }
+});
+
+modelSelect.addEventListener("change", function () {
+  if (this.value === "coming-soon") {
+    alert("UPESSC PRT 2026 का मॉडल प्रश्नपत्र जल्द उपलब्ध होगा।");
+    this.selectedIndex = 0;
+  }
+});
+</script>
+
+</body>
+</html>
