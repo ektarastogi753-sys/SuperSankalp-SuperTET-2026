@@ -114,6 +114,10 @@ footer{text-align:center;padding:20px;color:#64748b}
 <option value="reasoning">तार्किक क्षमता</option>
 <option value="it">सूचना तकनीकी</option>
 </select>
+   <button id="scienceExtraButton" class="hidden"
+style="background:#16794b" type="button">
+📘 विज्ञान के अतिरिक्त पाठ
+   </button>
 <p class="small">गणित और विज्ञान में पहले आसान भाषा में पाठ पढ़ें। फिर उसी विषय के उपलब्ध MCQ हल करें।</p>
 </section>
 
@@ -398,6 +402,7 @@ showLesson();
 }
 
 function startSubject(){
+   $("scienceExtraButton").classList.toggle("hidden", subject.value !== "science");
 if(subject.value==="math"||subject.value==="science"){
 lessonMode();
 return;
@@ -587,6 +592,9 @@ render();
 $("startLessonQuiz").onclick=()=>startLessonQuiz(false);
 $("allQuestions").onclick=()=>startLessonQuiz(true);
 $("backToLesson").onclick=lessonMode;
+   $("scienceExtraButton").onclick = () => {
+  window.location.href = "science-extra.html";
+};
 lessonSelect.onchange=showLesson;
 subject.onchange=startSubject;
 /* Home और Back बटन */
