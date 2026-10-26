@@ -398,10 +398,14 @@ showLesson();
 }
 
 function startSubject(){
-if(subject.value==="math"||subject.value==="science"){
-lessonMode();
+if(subject.value==="science"){
+window.location.href="science-extra.html";
 return;
 }
+if(subject.value==="math"){
+lessonMode();
+return;
+   }
 
 $("lessonCard").classList.add("hidden");
 $("statsCard").classList.remove("hidden");
