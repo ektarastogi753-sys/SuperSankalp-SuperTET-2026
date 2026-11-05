@@ -314,8 +314,10 @@ body {
       <span class="divider" aria-hidden="true"></span>
 
       <select id="modelSelect" aria-label="मॉडल प्रश्नपत्र चुनें">
-        <option value="" selected disabled>मॉडल प्रश्न पत्र</option>
-        <option value="coming-soon">UPESSC PRT 2026 — जल्द उपलब्ध</option>
+  <option value="" selected disabled>मॉडल प्रश्नपत्र चुनें</option>
+  <option value="model-paper-01.html">
+    मॉडल पेपर 01 — कठिन स्तर (120 प्रश्न)
+  </option>
       </select>
 
       <span class="chevron" aria-hidden="true"></span>
@@ -377,9 +379,8 @@ subjectSelect.addEventListener("change", function () {
 });
 
 modelSelect.addEventListener("change", function () {
-  if (this.value === "coming-soon") {
-    alert("UPESSC PRT 2026 का मॉडल प्रश्नपत्र जल्द उपलब्ध होगा।");
-    this.selectedIndex = 0;
+  if (this.value) {
+    window.location.href = "./" + this.value;
   }
 });
 </script>
