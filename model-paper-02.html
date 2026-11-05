@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14213d">
+<title>SuperSankalp | मॉडल पेपर 02</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,"Noto Sans Devanagari",sans-serif;
+ background:#f3f5fa;
+ color:#172033;
+}
+header{
+ background:linear-gradient(135deg,#14213d,#2457a7);
+ color:white;
+ padding:20px 14px;
+ text-align:center;
+}
+header h1{margin:8px 0;color:#ffd98a}
+.container{max-width:850px;margin:16px auto;padding:0 12px}
+.card{
+ background:white;
+ border-radius:14px;
+ padding:16px;
+ margin-bottom:14px;
+ box-shadow:0 4px 16px #14213d12;
+}
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
+ text-align:center;
+}
+.stat{
+ background:#eef3fb;
+ padding:10px 4px;
+ border-radius:9px;
+}
+.stat strong{
+ display:block;
+ font-size:21px;
+ color:#2457a7;
+}
+button{
+ width:100%;
+ border:0;
+ border-radius:10px;
+ padding:13px;
+ margin-top:8px;
+ font-size:16px;
+ font-weight:bold;
+ background:#2457a7;
+ color:white;
+ cursor:pointer;
+}
+button:disabled{opacity:.5}
+.secondary{background:#64748b}
+.danger{background:#b42318}
+.green{background:#16794b}
+.hidden{display:none!important}
+#timer{
+ font-size:25px;
+ font-weight:bold;
+ color:#b42318;
+ text-align:center;
+}
+#question{
+ font-size:19px;
+ font-weight:bold;
+ line-height:1.7;
+}
+.option{
+ display:block;
+ width:100%;
+ text-align:left;
+ background:#fff;
+ color:#172033;
+ border:1px solid #ccd4e0;
+ margin:8px 0;
+ font-weight:normal;
+ line-height:1.5;
+}
+.option.selected{
+ background:#e8f0ff;
+ border:2px solid #2457a7;
+}
+.palette{
+ display:grid;
+ grid-template-columns:repeat(8,1fr);
+ gap:6px;
+}
+.palette button{
+ margin:0;
+ padding:9px 2px;
+ font-size:13px;
+ background:#e2e8f0;
+ color:#172033;
+}
+.palette button.done{background:#16794b;color:white}
+.palette button.current{outline:3px solid #fca311}
+.palette button.review{background:#9b59b6;color:white}
+.actions{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:8px;
+}
+.actions button{margin:0}
+.review-item{
+ border-bottom:1px solid #e2e8f0;
+ padding:13px 0;
+ line-height:1.7;
+}
+.correct-text{color:#16794b;font-weight:bold}
+.wrong-text{color:#b42318;font-weight:bold}
+.small{font-size:13px;color:#64748b;line-height:1.6}
+@media(max-width:500px){
+ .palette{grid-template-columns:repeat(6,1fr)}
+ #question{font-size:17px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div>UPESSC • ASSISTANT TEACHER 2026</div>
+ <h1>SuperSankalp</h1>
+ <div>मॉडल प्रश्नपत्र 02 — मध्यम-कठिन स्तर</div>
+</header>
+
+<main class="container">
+
+<section class="card" id="intro">
+ <h2>पूर्ण मॉडल प्रश्नपत्र</h2>
+ <div class="stats">
+  <div class="stat"><strong>120</strong>प्रश्न</div>
+  <div class="stat"><strong>360</strong>अधिकतम अंक</div>
+  <div class="stat"><strong>120</strong>मिनट</div>
+ </div>
+ <p>सही उत्तर: +3 अंक | गलत उत्तर: −1 अंक | बिना उत्तर: 0 अंक</p>
+ <p class="small">यह कठिन स्तर का अभ्यास मॉडल पेपर है। परीक्षा शुरू करने के बाद समय स्वतः चलेगा। आपके उत्तर इसी ब्राउज़र में सुरक्षित होंगे।</p>
+ <button id="startBtn">परीक्षा शुरू करें</button>
+ <button id="resumeBtn" class="green hidden">पहले से सुरक्षित परीक्षा जारी रखें</button>
+ <button id="savedResultBtn" class="secondary hidden">पिछला परिणाम देखें</button>
+</section>
+
+<section class="card hidden" id="exam">
+ <div id="timer">02:00:00</div>
+ <div class="stats">
+  <div class="stat"><strong id="qNo">1/120</strong>प्रश्न</div>
+  <div class="stat"><strong id="attempted">0</strong>हल किए</div>
+  <div class="stat"><strong id="marked">0</strong>समीक्षा हेतु</div>
+ </div>
+
+ <p id="subjectName" class="small"></p>
+ <p id="question"></p>
+ <div id="options"></div>
+
+ <div class="actions">
+  <button id="prevBtn" class="secondary">← पिछला</button>
+  <button id="nextBtn">अगला →</button>
+ </div>
+ <div class="actions">
+  <button id="markBtn" class="secondary">★ समीक्षा हेतु रखें</button>
+  <button id="clearBtn" class="secondary">उत्तर हटाएँ</button>
+ </div>
+
+ <h3>प्रश्न सूची</h3>
+ <div id="palette" class="palette"></div>
+
+ <button id="submitBtn" class="danger">परीक्षा सबमिट करें</button>
+</section>
+
+<section class="card hidden" id="result">
+ <h2>आपका परीक्षा परिणाम</h2>
+ <div class="stats">
+  <div class="stat"><strong id="score">0</strong>प्राप्त अंक</div>
+  <div class="stat"><strong id="right">0</strong>सही</div>
+  <div class="stat"><strong id="wrong">0</strong>गलत</div>
+ </div>
+ <p id="resultSummary"></p>
+ <p id="unattempted"></p>
+
+ <h3>गलत प्रश्नों का विश्लेषण एवं व्याख्या</h3>
+ <div id="wrongReview"></div>
+
+ <h3>पूरा हल प्रश्नपत्र</h3>
+ <div id="fullReview"></div>
+
+ <button id="saveResultBtn" class="green">परिणाम सुरक्षित करें</button>
+ <button id="resetBtn" class="danger">इस पेपर को रीसेट करें</button>
+ <button id="homeBtn" class="secondary">मुख्य पृष्ठ पर जाएँ</button>
+</section>
+
+</main>
+
+<script src="model-paper-02.js?v=1"></script>
+</body>
+</html>
