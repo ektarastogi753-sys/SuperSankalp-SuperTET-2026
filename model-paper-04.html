@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मॉडल पेपर 04 | SuperSankalp</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f5f9;font-family:Arial,"Noto Sans Devanagari",sans-serif;color:#202938}
+header{background:#172554;color:white;padding:18px 14px;text-align:center}
+header h2{margin:0 0 7px}
+header p{margin:4px;font-size:14px}
+.wrap{max-width:850px;margin:18px auto;padding:12px}
+.card{background:white;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 2px 10px #00000010}
+.info{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:bold}
+#timer{color:#b91c1c;font-size:20px}
+.progress{height:8px;background:#e5e7eb;border-radius:10px;margin:15px 0;overflow:hidden}
+#bar{height:100%;width:0;background:#2563eb}
+#subject{color:#1d4ed8;font-weight:bold;font-size:14px}
+#question{font-size:19px;line-height:1.6;margin:14px 0}
+.option{display:block;border:1px solid #d1d5db;border-radius:9px;padding:12px;margin:10px 0;cursor:pointer;line-height:1.5}
+.option input{margin-right:9px}
+.option.selected{background:#eff6ff;border-color:#2563eb}
+button{border:0;border-radius:8px;padding:11px 16px;font-size:15px;font-weight:bold;cursor:pointer;margin:4px}
+.primary{background:#1d4ed8;color:white}
+.secondary{background:#e5e7eb;color:#111827}
+.danger{background:#dc2626;color:white}
+.nav{display:flex;justify-content:space-between;flex-wrap:wrap;margin-top:15px}
+#numbers{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;margin-top:12px}
+.num{padding:9px 3px;background:#e5e7eb;border-radius:6px;text-align:center;cursor:pointer;font-size:13px}
+.num.done{background:#bbf7d0}
+.num.current{outline:2px solid #2563eb}
+#result{display:none}
+.correct{color:#15803d;font-weight:bold}
+.wrong{color:#dc2626;font-weight:bold}
+.explain{background:#f8fafc;border-left:4px solid #2563eb;padding:10px;margin:10px 0;border-radius:5px}
+@media(max-width:500px){#question{font-size:17px}#numbers{grid-template-columns:repeat(6,1fr)}}
+</style>
+</head>
+<body>
+<header>
+<h2>SUPER SANKALP – MODEL PAPER 04</h2>
+<p>SuperTET / UP Assistant Teacher Practice Test</p>
+<p>120 प्रश्न | 360 अंक | 120 मिनट | कठिन स्तर</p>
+</header>
+
+<div class="wrap">
+<div class="card">
+<div class="info">
+<span id="count">प्रश्न 1 / 120</span>
+<span id="timer">120:00</span>
+</div>
+<div class="progress"><div id="bar"></div></div>
+<div id="test">
+<div id="subject"></div>
+<div id="question"></div>
+<div id="options"></div>
+<div class="nav">
+<button class="secondary" onclick="previous()">← पिछला</button>
+<button class="secondary" onclick="clearAnswer()">उत्तर हटाएँ</button>
+<button class="primary" onclick="next()">अगला →</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<b>प्रश्न संख्या पर क्लिक करके सीधे उस प्रश्न पर जाएँ:</b>
+<div id="numbers"></div>
+</div>
+
+<div class="card" id="submitBox">
+<button class="primary" onclick="submitTest()">टेस्ट जमा करें</button>
+<button class="danger" onclick="resetTest()">टेस्ट रीसेट करें</button>
+<p style="font-size:13px;color:#64748b">आपके उत्तर इसी डिवाइस के ब्राउज़र में सुरक्षित रखे जाते हैं।</p>
+</div>
+
+<div class="card" id="result">
+<h2>आपका परिणाम</h2>
+<div id="score"></div>
+<div id="review"></div>
+<button class="primary" onclick="resetTest()">दोबारा टेस्ट दें</button>
+</div>
+</div>
+
+<script src="model-paper-04.js?v=1"></script>
+</body>
+</html>
